@@ -9,7 +9,7 @@
   <!-- Favicon menggunakan logo lokal -->
   <link rel="icon" href="Asset/LogoEmas.png" />
 
-  <!-- Tailwind CSS CDN (Siap pakai tanpa perlu install/build tools) -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Google Fonts: Plus Jakarta Sans & Montserrat -->
@@ -79,7 +79,6 @@
       border: 1.5px solid rgba(0, 86, 255, 0.14);
     }
 
-    /* Animasi equalizer bar saat preview genre diputar */
     @keyframes eqBounce {
       0%, 100% { height: 6px; }
       50% { height: 22px; }
@@ -95,7 +94,6 @@
   <!-- ================= NAVBAR ================= -->
   <header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-blue-100">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      <!-- Brand Logo (Gambar Lokal) -->
       <a href="#beranda" class="flex items-center gap-3 group">
         <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950 overflow-hidden flex items-center justify-center border-2 border-sq-gold shadow-md group-hover:scale-105 transition">
           <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment" class="w-full h-full object-cover" />
@@ -106,7 +104,6 @@
         </div>
       </a>
 
-      <!-- Desktop Menu -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
         <a href="#tentang" class="hover:text-sq-blue transition">Tentang Kami</a>
         <a href="#genre" class="hover:text-sq-blue transition">Multi-Genre</a>
@@ -115,7 +112,6 @@
         <a href="#paket" class="hover:text-sq-blue transition">Paket & Harga</a>
       </nav>
 
-      <!-- CTA Button -->
       <div class="flex items-center gap-2">
         <a href="#booking" class="bg-sq-blue hover:bg-sq-dark text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full shadow-sq transition transform hover:-translate-y-0.5">
           Booking Event
@@ -128,7 +124,6 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-blue-100 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-slate-700">
       <a href="#tentang" class="block py-2 hover:text-sq-blue">Tentang Kami</a>
       <a href="#genre" class="block py-2 hover:text-sq-blue">Multi-Genre Religi</a>
@@ -141,7 +136,6 @@
 
   <!-- ================= HERO SECTION ================= -->
   <section id="beranda" class="relative sq-hero-bg pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
-    <!-- Ornamen Wavy Ribbon Khas Feed SQ -->
     <svg class="absolute top-12 left-0 w-full h-full pointer-events-none opacity-30" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M-80 420C140 280 340 560 620 430C900 300 1120 140 1520 260" stroke="#0056FF" stroke-width="14" stroke-linecap="round"/>
       <path d="M-60 470C180 330 380 610 660 480C940 350 1160 190 1540 310" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
@@ -200,8 +194,8 @@
         <!-- Right Visual Card (Style Feed SQ) -->
         <div class="lg:col-span-5">
           <div class="relative mx-auto max-w-md rounded-3xl bg-gradient-to-b from-sq-blue to-sq-dark p-6 sm:p-8 text-white shadow-sq-lg border-4 border-white">
-            <div class="flex items-center justify-between mb-6">
-              <span class="sq-gold-badge text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider">
+            <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-2 mb-6">
+              <span class="sq-gold-badge text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
                 Official Brand Profile
               </span>
               <span class="text-xs font-semibold text-blue-100">@sq_entertainment26</span>
@@ -274,7 +268,6 @@
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Genre 1 -->
         <div onclick="playGenrePreview('haroki', this)" class="genre-card cursor-pointer group bg-white rounded-3xl p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq transition">
           <div class="flex items-center justify-between mb-4">
             <span class="w-12 h-12 rounded-2xl bg-sq-blue text-white flex items-center justify-center font-display font-black text-lg">01</span>
@@ -293,7 +286,6 @@
           </p>
         </div>
 
-        <!-- Genre 2 -->
         <div onclick="playGenrePreview('pop', this)" class="genre-card cursor-pointer group bg-white rounded-3xl p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq transition">
           <div class="flex items-center justify-between mb-4">
             <span class="w-12 h-12 rounded-2xl bg-sq-blue text-white flex items-center justify-center font-display font-black text-lg">02</span>
@@ -312,7 +304,6 @@
           </p>
         </div>
 
-        <!-- Genre 3 -->
         <div onclick="playGenrePreview('rnb', this)" class="genre-card cursor-pointer group bg-white rounded-3xl p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq transition">
           <div class="flex items-center justify-between mb-4">
             <span class="w-12 h-12 rounded-2xl bg-sq-blue text-white flex items-center justify-center font-display font-black text-lg">03</span>
@@ -331,7 +322,6 @@
           </p>
         </div>
 
-        <!-- Genre 4 -->
         <div onclick="playGenrePreview('orchestra', this)" class="genre-card cursor-pointer group bg-white rounded-3xl p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq transition">
           <div class="flex items-center justify-between mb-4">
             <span class="w-12 h-12 rounded-2xl bg-sq-blue text-white flex items-center justify-center font-display font-black text-lg">04</span>
@@ -350,7 +340,6 @@
           </p>
         </div>
 
-        <!-- Genre 5 -->
         <div onclick="playGenrePreview('akustik', this)" class="genre-card cursor-pointer group bg-white rounded-3xl p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq transition sm:col-span-2 lg:col-span-2">
           <div class="flex items-center justify-between mb-4">
             <span class="w-12 h-12 rounded-2xl bg-sq-blue text-white flex items-center justify-center font-display font-black text-lg">05</span>
@@ -385,7 +374,6 @@
         </p>
       </div>
 
-      <!-- 4 Layanan Grid -->
       <div class="grid md:grid-cols-2 gap-6 mb-20">
         <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
           <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
@@ -428,7 +416,7 @@
         </div>
       </div>
 
-      <!-- 4. KEUNGGULAN KAMI (WHY CHOOSE US?) -->
+      <!-- 4. KEUNGGULAN KAMI -->
       <div class="rounded-3xl bg-sq-blue text-white p-8 sm:p-12 shadow-sq-lg">
         <div class="text-center max-w-2xl mx-auto mb-10">
           <span class="inline-block bg-white text-sq-blue font-display font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider mb-3">
@@ -487,7 +475,6 @@
         </p>
       </div>
 
-      <!-- 4 Personil Cards (Rasio 1080 x 1440 / 3:4) -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-10">
         <!-- Personil 1: ANDREI -->
         <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
@@ -550,7 +537,6 @@
         </div>
       </div>
 
-      <!-- Tim Media & Kreatif Banner -->
       <div class="glass-card rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-blue-200">
         <div class="flex items-center gap-4 text-center sm:text-left">
           <div class="w-12 h-12 rounded-2xl bg-blue-100 text-sq-blue flex items-center justify-center shrink-0 mx-auto sm:mx-0">
@@ -582,7 +568,7 @@
         </p>
       </div>
 
-      <!-- HIGHLIGHT CARD: PAKET ALL-IN PERFORMANCE RP 7.500.000 -->
+      <!-- HIGHLIGHT CARD -->
       <div class="rounded-3xl bg-gradient-to-br from-sq-blue via-sq-blue to-sq-dark text-white p-8 sm:p-12 shadow-sq-lg border-4 border-blue-200 mb-14 relative overflow-hidden">
         <div class="grid lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 text-center lg:text-left lg:border-r lg:border-white/20 lg:pr-8">
@@ -632,13 +618,12 @@
         </div>
       </div>
 
-      <!-- PAKET PENAWARAN KHUSUS RAMADHAN (2 KATEGORI) -->
+      <!-- PAKET PENAWARAN KHUSUS RAMADHAN -->
       <div class="mb-14">
         <h3 class="font-display font-black text-2xl text-slate-900 text-center mb-8">
           PAKET PENAWARAN KHUSUS RAMADHAN
         </h3>
         <div class="grid md:grid-cols-2 gap-6">
-          <!-- Paket Intimate -->
           <div class="rounded-3xl p-7 bg-blue-50/60 border-2 border-blue-200 flex flex-col justify-between">
             <div>
               <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">
@@ -656,7 +641,6 @@
             </button>
           </div>
 
-          <!-- Paket Concert -->
           <div class="rounded-3xl p-7 bg-blue-50/60 border-2 border-blue-200 flex flex-col justify-between">
             <div>
               <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">
@@ -676,7 +660,7 @@
         </div>
       </div>
 
-      <!-- SYARAT & KETENTUAN (TERMS & CONDITIONS) -->
+      <!-- SYARAT & KETENTUAN -->
       <div class="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-8">
         <h3 class="font-display font-extrabold text-lg text-slate-900 mb-4">Syarat & Ketentuan (Terms & Conditions)</h3>
         <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
@@ -701,7 +685,6 @@
   <section id="booking" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50 to-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 items-start">
-        <!-- Info Kontak & Medsos -->
         <div class="lg:col-span-5 space-y-6">
           <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
             07 • Kontak & Booking
@@ -748,7 +731,6 @@
           </div>
         </div>
 
-        <!-- Form Booking WhatsApp -->
         <div class="lg:col-span-7">
           <form id="bookingForm" class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-blue-100 shadow-sq space-y-4">
             <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Form Reservasi / Penawaran Acara</h3>
@@ -818,24 +800,20 @@
 
   <!-- ================= JAVASCRIPT INTERAKTIF ================= -->
   <script>
-    // NOMOR WHATSAPP CONTACT PERSON
     const WHATSAPP_CP = "6282311682185";
 
-    // Toggle Menu Mobile
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Helper Pilih Paket dari Kartu Harga ke Form Booking
     function selectPackage(pkgName) {
       const select = document.getElementById('packageSelect');
       select.value = pkgName;
       document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Form Booking -> Kirim langsung ke WhatsApp
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('clientName').value;
@@ -850,7 +828,6 @@
       window.open(`https://wa.me/${WHATSAPP_CP}?text=${message}`, '_blank');
     });
 
-    // Audio Synthesizer Preview untuk Kartu Multi-Genre (Web Audio API - tanpa file MP3 eksternal)
     let audioCtx = null;
     function playGenrePreview(genre, cardEl) {
       document.querySelectorAll('.genre-card').forEach(el => el.classList.remove('eq-active', 'border-sq-blue'));
@@ -864,11 +841,11 @@
       }
 
       const chords = {
-        haroki: [293.66, 349.23, 440.00, 587.33],   // Dm power spirit
-        pop: [261.63, 329.63, 392.00, 493.88],      // Cmaj7 bright pop
-        rnb: [220.00, 261.63, 329.63, 392.00],      // Am7 smooth RnB
-        orchestra: [196.00, 246.94, 293.66, 392.00],// G majestic
-        akustik: [329.63, 392.00, 493.88, 587.33]   // Em7 warm acoustic
+        haroki: [293.66, 349.23, 440.00, 587.33],
+        pop: [261.63, 329.63, 392.00, 493.88],
+        rnb: [220.00, 261.63, 329.63, 392.00],
+        orchestra: [196.00, 246.94, 293.66, 392.00],
+        akustik: [329.63, 392.00, 493.88, 587.33]
       };
 
       const notes = chords[genre] || chords.pop;
