@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optional Services — SQ Entertainment (Shoutul Qolbi)</title>
+  <meta name="description" content="Layanan tambahan SQ Entertainment: Talent Agency, Paket Event Lainnya, Daftar Harga, dan Peminjaman Sound System." />
+
+  <!-- Favicon menggunakan logo lokal -->
+  <link rel="icon" href="Asset/LogoEmas.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Montserrat"', 'sans-serif'],
+          },
+          colors: {
+            sq: {
+              blue: '#0056FF',
+              dark: '#0035A8',
+              light: '#E8F1FF',
+              sky: '#3B82F6',
+              gold: '#D4AF37',
+              goldLight: '#F3D066',
+            }
+          },
+          boxShadow: {
+            'sq': '0 14px 35px -10px rgba(0, 86, 255, 0.22)',
+            'sq-lg': '0 22px 50px -12px rgba(0, 86, 255, 0.32)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(180deg, #E8F1FF 0%, #F7FAFF 35%, #FFFFFF 100%);
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+
+    .sq-hero-bg {
+      background: radial-gradient(circle at 80% 15%, rgba(0, 86, 255, 0.16) 0%, transparent 45%),
+                  radial-gradient(circle at 15% 65%, rgba(59, 130, 246, 0.14) 0%, transparent 50%),
+                  linear-gradient(180deg, #DCEAFF 0%, #F4F8FF 60%, #FFFFFF 100%);
+    }
+
+    .sq-pill-title {
+      background: #FFFFFF;
+      border: 2.5px solid #0056FF;
+      box-shadow: 0 8px 20px rgba(0, 86, 255, 0.16);
+    }
+
+    .sq-gold-badge {
+      background: linear-gradient(135deg, #C59B27 0%, #F3D066 50%, #B38718 100%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(0, 86, 255, 0.14);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-sq-blue selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-blue-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950 overflow-hidden flex items-center justify-center border-2 border-sq-gold shadow-md group-hover:scale-105 transition">
+          <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-sq-blue block leading-none">SQ ENTERTAINMENT</span>
+          <span class="text-[11px] sm:text-xs font-semibold text-slate-500 tracking-wide">Shoutul Qolbi</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
+        <a href="index.html" class="hover:text-sq-blue transition">Beranda</a>
+        <a href="#talent" class="hover:text-sq-blue transition">Talent Agency</a>
+        <a href="#event-lain" class="hover:text-sq-blue transition">Event Lainnya</a>
+        <a href="#sound-system" class="hover:text-sq-blue transition">Sound System</a>
+        <a href="#harga-optional" class="hover:text-sq-blue transition">Daftar Harga</a>
+        <a href="optional.html" class="text-sq-blue font-extrabold border-b-2 border-sq-blue pb-0.5">Optional</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#booking-optional" class="bg-sq-blue hover:bg-sq-dark text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full shadow-sq transition transform hover:-translate-y-0.5">
+          Booking Layanan
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-sq-blue hover:bg-blue-50" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-blue-100 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-slate-700">
+      <a href="index.html" class="block py-2 hover:text-sq-blue">← Kembali ke Beranda Utama</a>
+      <a href="#talent" class="block py-2 hover:text-sq-blue">Talent Agency</a>
+      <a href="#event-lain" class="block py-2 hover:text-sq-blue">Event Lainnya</a>
+      <a href="#sound-system" class="block py-2 hover:text-sq-blue">Peminjaman Sound System</a>
+      <a href="#harga-optional" class="block py-2 hover:text-sq-blue">Daftar Harga</a>
+      <a href="#booking-optional" class="block py-2 text-sq-blue font-bold">Form Pemesanan WhatsApp →</a>
+    </div>
+  </header>
+
+  <!-- ================= HERO OPTIONAL ================= -->
+  <section class="sq-hero-bg pt-28 pb-16 sm:pt-36 sm:pb-20 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="inline-flex items-center gap-2 sq-pill-title px-4 py-1.5 rounded-full mb-5">
+        <span class="w-2.5 h-2.5 rounded-full bg-sq-blue animate-pulse"></span>
+        <span class="text-xs sm:text-sm font-extrabold text-sq-blue tracking-wide uppercase">
+          Optional Services & Event Support
+        </span>
+      </div>
+
+      <h1 class="font-display font-black text-3xl sm:text-5xl text-slate-900 leading-tight mb-4">
+        OPTIONAL SERVICES
+        <span class="block text-sq-blue text-2xl sm:text-3xl mt-1">SQ Entertainment (Shoutul Qolbi)</span>
+      </h1>
+
+      <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+        Lengkapi kebutuhan acara Anda dalam satu pintu: mulai dari penyediaan <strong>Talent Agency</strong>, konsep <strong>Event Lainnya</strong>, hingga <strong>Peminjaman Sound System</strong> profesional.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#talent" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Talent Agency</a>
+        <a href="#event-lain" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Event Lainnya</a>
+        <a href="#sound-system" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Sound System</a>
+        <a href="#harga-optional" class="bg-sq-blue hover:bg-sq-dark text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-sq transition">Lihat Daftar Harga</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 1. TALENT AGENCY ================= -->
+  <section id="talent" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+          01 • Talent Agency
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">TALENT AGENCY</h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Kurasi pengisi acara profesional yang siap menyesuaikan karakter kegiatan formal, edukatif, maupun hiburan Islami.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-3xl p-6 bg-gradient-to-b from-blue-50/80 to-white border-2 border-blue-100 hover:border-sq-blue shadow-sm transition">
+          <span class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-4">MC & Host</span>
+          <h3 class="font-display font-extrabold text-lg text-slate-900 mb-2">MC Formal & Semi-Formal</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pembawa acara berpengalaman untuk Wedding Islami, Seminar, Gathering Perusahaan, hingga Konser Amal.
+          </p>
+        </div>
+
+        <div class="rounded-3xl p-6 bg-gradient-to-b from-blue-50/80 to-white border-2 border-blue-100 hover:border-sq-blue shadow-sm transition">
+          <span class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-4">Vokal & Musik</span>
+          <h3 class="font-display font-extrabold text-lg text-slate-900 mb-2">Soloist & Acoustic Duo</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Formasi ringkas (1–2 talent vokal & gitar/keyboard) untuk acara intimate, akad nikah, atau kafe religi.
+          </p>
+        </div>
+
+        <div class="rounded-3xl p-6 bg-gradient-to-b from-blue-50/80 to-white border-2 border-blue-100 hover:border-sq-blue shadow-sm transition">
+          <span class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-4">Syiar & Tilawah</span>
+          <h3 class="font-display font-extrabold text-lg text-slate-900 mb-2">Qori, Sari Tilawah & Da'i</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Penyediaan pembaca ayat suci Al-Qur'an, sari tilawah, serta penceramah muda untuk pembukaan acara & PHBI.
+          </p>
+        </div>
+
+        <div class="rounded-3xl p-6 bg-gradient-to-b from-blue-50/80 to-white border-2 border-blue-100 hover:border-sq-blue shadow-sm transition">
+          <span class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-4">Visual & Live</span>
+          <h3 class="font-display font-extrabold text-lg text-slate-900 mb-2">Tim Dokumentasi & Live Cam</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Fotografer, videografer highlight, dan operator multi-cam untuk kebutuhan layar panggung maupun live streaming.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. EVENT LAINNYA ================= -->
+  <section id="event-lain" class="py-16 sm:py-20 bg-gradient-to-b from-blue-50/70 to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+          02 • Other Events
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">EVENT LAINNYA</h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Selain konser dan wedding, SQ Entertainment mendukung penuh berbagai format kegiatan komunitas, kampus, hingga sekolah.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-7 border-2 border-blue-100 shadow-sm">
+          <span class="font-display font-black text-2xl text-sq-blue block mb-2">01</span>
+          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Wisuda, Haflah & Pentas Seni</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pengisi hiburan utama maupun pengiring prosesi wisuda sekolah Islam terpadu, pesantren, dan universitas.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-7 border-2 border-blue-100 shadow-sm">
+          <span class="font-display font-black text-2xl text-sq-blue block mb-2">02</span>
+          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Grand Opening & Launching Produk</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Menciptakan suasana ramah, elegan, dan menarik pengunjung saat peresmian toko, klinik, atau brand baru.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-7 border-2 border-blue-100 shadow-sm">
+          <span class="font-display font-black text-2xl text-sq-blue block mb-2">03</span>
+          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Aqiqah, Khitanan & Tasyakuran</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Sajian musik akustik religi dan shalawat hangat untuk acara syukuran keluarga di rumah maupun gedung pertemuan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. PEMINJAMAN SOUND SYSTEM ================= -->
+  <section id="sound-system" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+          03 • Audio Rental
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">PEMINJAMAN SOUND SYSTEM</h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Paket penyewaan perangkat tata suara lengkap dengan operator teknis untuk memastikan kualitas audio acara tetap jernih.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Paket Sound 1 -->
+        <div class="rounded-3xl p-7 bg-blue-50/50 border-2 border-blue-100 flex flex-col justify-between">
+          <div>
+            <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">Kapasitas 50–100 Orang</span>
+            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Sound Intimate</h3>
+            <ul class="space-y-2 text-sm text-slate-700 mb-6">
+              <li>✓ 2 Unit Speaker Aktif 15 Inch + Stand</li>
+              <li>✓ Mixer Audio 8 Channel</li>
+              <li>✓ 2 Mic Wireless + 2 Mic Kabel & Stand</li>
+              <li>✓ Kabel & Instalasi Lengkap</li>
+              <li>✓ 1 Orang Operator Sound Stand-by</li>
+            </ul>
+          </div>
+          <button onclick="selectOptional('Sound System Intimate (Mulai Rp 1.500.000,-)')" class="w-full py-3 rounded-xl bg-white border-2 border-sq-blue text-sq-blue font-bold hover:bg-sq-blue hover:text-white transition">
+            Booking Paket Intimate
+          </button>
+        </div>
+
+        <!-- Paket Sound 2 -->
+        <div class="rounded-3xl p-7 bg-gradient-to-b from-sq-blue to-sq-dark text-white border-4 border-blue-200 shadow-sq-lg flex flex-col justify-between">
+          <div>
+            <span class="sq-gold-badge text-slate-950 text-xs font-extrabold px-3.5 py-1 rounded-full uppercase mb-3 inline-block">Paling Diminati • 150–300 Orang</span>
+            <h3 class="font-display font-extrabold text-xl mb-3">Paket Sound Gathering & Acoustic</h3>
+            <ul class="space-y-2 text-sm text-blue-50 mb-6">
+              <li>✓ 2 Speaker Utama 15" + 1 Subwoofer 18"</li>
+              <li>✓ 2 Unit Monitor Panggung</li>
+              <li>✓ Mixer Digital / 12–16 Channel</li>
+              <li>✓ 4 Mic Wireless + Mic Instrumen & DI Box</li>
+              <li>✓ Soundman Profesional Selama Acara</li>
+            </ul>
+          </div>
+          <button onclick="selectOptional('Sound System Gathering & Acoustic (Mulai Rp 3.000.000,-)')" class="w-full py-3.5 rounded-xl bg-white text-sq-blue font-extrabold hover:bg-blue-50 transition shadow">
+            Booking Paket Gathering
+          </button>
+        </div>
+
+        <!-- Paket Sound 3 -->
+        <div class="rounded-3xl p-7 bg-blue-50/50 border-2 border-blue-100 flex flex-col justify-between">
+          <div>
+            <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">Kapasitas 300–700+ Orang</span>
+            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Sound Full Band / Konser</h3>
+            <ul class="space-y-2 text-sm text-slate-700 mb-6">
+              <li>✓ Line Array / FOH System 5.000–10.000 Watt</li>
+              <li>✓ 4 Unit Stage Monitor & Subwoofer Ganda</li>
+              <li>✓ Digital Mixer 24–32 Channel</li>
+              <li>✓ Full Mic Drum, Gitar, Bass, & Vokal</li>
+              <li>✓ Tim Sound Engineer & Crew Teknis</li>
+            </ul>
+          </div>
+          <button onclick="selectOptional('Sound System Full Band / Konser (Mulai Rp 6.500.000,-)')" class="w-full py-3 rounded-xl bg-white border-2 border-sq-blue text-sq-blue font-bold hover:bg-sq-blue hover:text-white transition">
+            Booking Paket Full Band
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. DAFTAR HARGA OPTIONAL ================= -->
+  <section id="harga-optional" class="py-16 sm:py-20 bg-gradient-to-b from-blue-50/70 to-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+          04 • Price List Optional
+        </span>
+        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">DAFTAR HARGA LAYANAN</h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Estimasi tarif layanan tambahan. Harga dapat disesuaikan dengan durasi, lokasi acara, serta kebutuhan bundling dengan penampilan utama SQ Entertainment.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl border-2 border-blue-100 shadow-sq overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-sq-blue text-white text-xs sm:text-sm uppercase tracking-wider">
+                <th class="py-4 px-5 font-display font-bold">Kategori Layanan</th>
+                <th class="py-4 px-5 font-display font-bold">Spesifikasi Singkat</th>
+                <th class="py-4 px-5 font-display font-bold">Estimasi Harga</th>
+                <th class="py-4 px-5 font-display font-bold text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-blue-100 text-sm text-slate-700">
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Talent MC / Host Acara</td>
+                <td class="py-4 px-5">1 Orang MC (Durasi acara hingga 3 jam)</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Mulai Rp 1.000.000,-</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Talent MC / Host Acara (Mulai Rp 1.000.000,-)')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Talent Soloist / Acoustic Duo</td>
+                <td class="py-4 px-5">1–2 Talent Vokal & Musik (Sesi 45–60 menit)</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Mulai Rp 2.500.000,-</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Talent Soloist / Acoustic Duo (Mulai Rp 2.500.000,-)')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Qori & Sari Tilawah</td>
+                <td class="py-4 px-5">Pembukaan acara formal / pernikahan / PHBI</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Mulai Rp 800.000,-</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Talent Qori & Sari Tilawah (Mulai Rp 800.000,-)')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Sound System Intimate</td>
+                <td class="py-4 px-5">2 Speaker 15", Mixer 8 Ch, 2 Mic Wireless + Operator</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Mulai Rp 1.500.000,-</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Sound System Intimate (Mulai Rp 1.500.000,-)')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Sound System Gathering & Acoustic</td>
+                <td class="py-4 px-5">2 Speaker + 1 Sub 18", Monitor, 4 Mic Wireless + Soundman</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Mulai Rp 3.000.000,-</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Sound System Gathering & Acoustic (Mulai Rp 3.000.000,-)')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Sound System Full Band / Konser</td>
+                <td class="py-4 px-5">FOH 5.000–10.000W, Digital Mixer, Full Band Gear + Crew</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Mulai Rp 6.500.000,-</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Sound System Full Band / Konser (Mulai Rp 6.500.000,-)')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. FORM BOOKING OPTIONAL ================= -->
+  <section id="booking-optional" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <form id="optionalBookingForm" class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-blue-100 shadow-sq space-y-4">
+        <div class="text-center mb-4">
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider mb-2">
+            Reservasi Layanan Optional
+          </span>
+          <h3 class="font-display font-black text-2xl text-slate-900">Tanyakan Ketersediaan & Penawaran</h3>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Nama Anda / Instansi / EO</label>
+          <input type="text" id="optName" required placeholder="Contoh: Budi / Panitia Acara Kampus" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Layanan Optional yang Dibutuhkan</label>
+          <select id="optService" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
+            <option value="Talent MC / Host Acara (Mulai Rp 1.000.000,-)">Talent MC / Host Acara (Mulai Rp 1.000.000,-)</option>
+            <option value="Talent Soloist / Acoustic Duo (Mulai Rp 2.500.000,-)">Talent Soloist / Acoustic Duo (Mulai Rp 2.500.000,-)</option>
+            <option value="Talent Qori & Sari Tilawah (Mulai Rp 800.000,-)">Talent Qori & Sari Tilawah (Mulai Rp 800.000,-)</option>
+            <option value="Sound System Intimate (Mulai Rp 1.500.000,-)">Sound System Intimate (Mulai Rp 1.500.000,-)</option>
+            <option value="Sound System Gathering & Acoustic (Mulai Rp 3.000.000,-)">Sound System Gathering & Acoustic (Mulai Rp 3.000.000,-)</option>
+            <option value="Sound System Full Band / Konser (Mulai Rp 6.500.000,-)">Sound System Full Band / Konser (Mulai Rp 6.500.000,-)</option>
+            <option value="Bundling Event Lainnya + Sound System">Bundling Event Lainnya + Sound System</option>
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Tanggal Acara</label>
+            <input type="date" id="optDate" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Lokasi / Kota Acara</label>
+            <input type="text" id="optLocation" required placeholder="Contoh: Depok / Jakarta" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Detail Kebutuhan Acara</label>
+          <textarea id="optNotes" rows="3" placeholder="Contoh: Butuh MC + Sound System Gathering untuk acara wisuda..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-sq-blue hover:bg-sq-dark text-white font-extrabold py-4 rounded-xl shadow-sq transition flex items-center justify-center gap-2">
+          <span>Kirim Pertanyaan via WhatsApp</span>
+          <span>→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div>
+        <p class="font-display font-extrabold text-white text-base">SQ ENTERTAINMENT (Shoutul Qolbi)</p>
+        <p class="text-xs mt-1">Modern Islamic & Universal Music Entertainment</p>
+      </div>
+      <div class="flex items-center gap-5 text-xs font-semibold">
+        <a href="index.html" class="hover:text-white transition">Beranda Utama</a>
+        <a href="optional.html" class="text-white">Optional Services</a>
+      </div>
+      <p class="text-xs">© 2026 SQ Entertainment. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT INTERAKTIF ================= -->
+  <script>
+    const WHATSAPP_CP = "6282311682185";
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function selectOptional(serviceName) {
+      const select = document.getElementById('optService');
+      select.value = serviceName;
+      document.getElementById('booking-optional').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.getElementById('optionalBookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('optName').value;
+      const service = document.getElementById('optService').value;
+      const date = document.getElementById('optDate').value;
+      const location = document.getElementById('optLocation').value;
+      const notes = document.getElementById('optNotes').value || "-";
+
+      const message = `Assalamu'alaikum Admin *SQ Entertainment (Shoutul Qolbi)*,%0A%0ASaya ingin menanyakan layanan *Optional*:%0A• *Nama / Instansi:* ${encodeURIComponent(name)}%0A• *Layanan:* ${encodeURIComponent(service)}%0A• *Tanggal Acara:* ${encodeURIComponent(date)}%0A• *Lokasi:* ${encodeURIComponent(location)}%0A• *Detail Kebutuhan:* ${encodeURIComponent(notes)}%0A%0ATerima kasih.`;
+
+      window.open(`https://wa.me/${WHATSAPP_CP}?text=${message}`, '_blank');
+    });
+  </script>
+</body>
+</html>
