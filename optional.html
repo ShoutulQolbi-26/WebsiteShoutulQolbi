@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Optional Services — SQ Entertainment (Shoutul Qolbi)</title>
-  <meta name="description" content="Layanan tambahan SQ Entertainment: Talent Agency, Paket Event Lainnya, Daftar Harga, dan Peminjaman Sound System." />
+  <meta name="description" content="Layanan tambahan SQ Entertainment: Talent Agency, Event Lainnya, Spesial Event Berkisah Falah, Daftar Harga, dan Peminjaman Sound System." />
 
   <!-- Favicon menggunakan logo lokal -->
   <link rel="icon" href="Asset/LogoEmas.png" />
@@ -89,10 +89,11 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
+      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700">
         <a href="index.html" class="hover:text-sq-blue transition">Beranda</a>
         <a href="#talent" class="hover:text-sq-blue transition">Talent Agency</a>
         <a href="#event-lain" class="hover:text-sq-blue transition">Event Lainnya</a>
+        <a href="#spesial-event" class="hover:text-sq-blue transition">Spesial Event</a>
         <a href="#sound-system" class="hover:text-sq-blue transition">Sound System</a>
         <a href="#harga-optional" class="hover:text-sq-blue transition">Daftar Harga</a>
         <a href="optional.html" class="text-sq-blue font-extrabold border-b-2 border-sq-blue pb-0.5">Optional</a>
@@ -114,6 +115,7 @@
       <a href="index.html" class="block py-2 hover:text-sq-blue">← Kembali ke Beranda Utama</a>
       <a href="#talent" class="block py-2 hover:text-sq-blue">Talent Agency</a>
       <a href="#event-lain" class="block py-2 hover:text-sq-blue">Event Lainnya</a>
+      <a href="#spesial-event" class="block py-2 hover:text-sq-blue">Spesial Event: Berkisah Falah</a>
       <a href="#sound-system" class="block py-2 hover:text-sq-blue">Peminjaman Sound System</a>
       <a href="#harga-optional" class="block py-2 hover:text-sq-blue">Daftar Harga</a>
       <a href="#booking-optional" class="block py-2 text-sq-blue font-bold">Form Pemesanan WhatsApp →</a>
@@ -136,12 +138,13 @@
       </h1>
 
       <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-        Lengkapi kebutuhan acara Anda dalam satu pintu: mulai dari penyediaan <strong>Talent Agency</strong>, konsep <strong>Event Lainnya</strong>, hingga <strong>Peminjaman Sound System</strong> profesional.
+        Lengkapi kebutuhan acara Anda dalam satu pintu: mulai dari penyediaan <strong>Talent Agency</strong>, konsep <strong>Event Lainnya</strong>, program <strong>Spesial Event</strong>, hingga <strong>Peminjaman Sound System</strong> profesional.
       </p>
 
       <div class="flex flex-wrap justify-center gap-3">
         <a href="#talent" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Talent Agency</a>
         <a href="#event-lain" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Event Lainnya</a>
+        <a href="#spesial-event" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Spesial Event</a>
         <a href="#sound-system" class="bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full transition">Sound System</a>
         <a href="#harga-optional" class="bg-sq-blue hover:bg-sq-dark text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-sq transition">Lihat Daftar Harga</a>
       </div>
@@ -238,12 +241,103 @@
     </div>
   </section>
 
-  <!-- ================= 3. PEMINJAMAN SOUND SYSTEM ================= -->
-  <section id="sound-system" class="py-16 sm:py-20 bg-white">
+  <!-- ================= 3. SPESIAL EVENT: BERKISAH FALAH ================= -->
+  <section id="spesial-event" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Judul & Subjudul di Kiri Atas sesuai Layout -->
+      <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider mb-3">
+            03 • Special Event
+          </span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 leading-tight">Spesial Event</h2>
+          <p class="text-lg sm:text-xl font-semibold text-sq-blue mt-0.5">Berkisah Falah</p>
+        </div>
+        <button onclick="selectOptional('Spesial Event - Berkisah Falah')" class="self-start sm:self-auto bg-sq-blue hover:bg-sq-dark text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-sq transition">
+          Booking Berkisah Falah →
+        </button>
+      </div>
+
+      <!-- 2 Kontainer Gradasi Biru Berdampingan (Kiri: Foto | Kanan: Deskripsi + 2 Video Local) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        
+        <!-- Kontainer Kiri: Foto -->
+        <div class="lg:col-span-3 rounded-3xl p-4 sm:p-5 bg-gradient-to-b from-blue-100 via-blue-300 to-sq-blue border-2 border-blue-300 shadow-sq flex flex-col justify-between">
+          <div class="aspect-square w-full bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-sm flex items-center justify-center">
+            <img src="Asset/BerkisahFalah.png" alt="Berkisah Falah - SQ Entertainment" onerror="this.onerror=null; this.src='Asset/Falah1.jpeg';" class="w-full h-full object-cover object-top" />
+          </div>
+          <div class="mt-5 text-center text-white pt-2">
+            <p class="font-display font-extrabold text-base tracking-wide">FALAH</p>
+            <p class="text-xs text-blue-100 font-medium mt-0.5">Storyteller & Vocalist SQ</p>
+          </div>
+        </div>
+
+        <!-- Kontainer Kanan: 3 Kartu Putih Vertikal (Deskripsi, Video Local 1, Video Local 2) -->
+        <div class="lg:col-span-9 rounded-3xl p-4 sm:p-5 bg-gradient-to-b from-blue-100 via-blue-300 to-sq-blue border-2 border-blue-300 shadow-sq">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+            
+            <!-- Kartu 1: Deskripsi -->
+            <div class="bg-white rounded-2xl border-2 border-blue-200 p-5 sm:p-6 flex flex-col justify-between shadow-sm min-h-[340px]">
+              <div>
+                <span class="inline-block bg-blue-50 text-sq-blue text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                  Deskripsi
+                </span>
+                <h3 class="font-display font-black text-xl text-slate-900 mb-3">Berkisah Falah</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-3">
+                  Program bertutur kisah inspiratif yang dipadukan dengan lantunan vokal serta iringan musik akustik syahdu bersama <strong>Falah</strong> dari SQ Entertainment.
+                </p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Cocok untuk menghidupkan suasana kajian pemuda, pesantren kilat Ramadhan, seminar motivasi Islami, hingga acara sekolah & kampus.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-blue-100">
+                <button onclick="selectOptional('Spesial Event - Berkisah Falah')" class="w-full py-2.5 px-4 rounded-xl bg-sq-blue hover:bg-sq-dark text-white text-xs font-extrabold transition">
+                  Pilih Spesial Event Ini
+                </button>
+              </div>
+            </div>
+
+            <!-- Kartu 2: Video Local 1 -->
+            <div class="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-sm flex flex-col min-h-[340px]">
+              <div class="relative flex-1 bg-slate-950 flex items-center justify-center">
+                <video class="w-full h-full object-cover max-h-[420px]" controls playsinline preload="metadata" poster="Asset/Cover1Falah.jpeg">
+                  <source src="Asset/VidKafalah1.mp4" type="video/mp4" />
+                  Browser Anda tidak mendukung pemutar video HTML5.
+                </video>
+              </div>
+              <div class="px-4 py-2.5 bg-white border-t border-blue-100 flex items-center justify-between">
+                <span class="text-xs font-extrabold text-slate-800">Video Berkisah #1</span>
+                <span class="text-[11px] font-bold text-sq-blue">Masjid Al-</span>
+              </div>
+            </div>
+
+            <!-- Kartu 3: Video Local 2 -->
+            <div class="bg-white rounded-2xl border-2 border-blue-200 overflow-hidden shadow-sm flex flex-col min-h-[340px]">
+              <div class="relative flex-1 bg-slate-950 flex items-center justify-center">
+                <video class="w-full h-full object-cover max-h-[420px]" controls playsinline preload="metadata" poster="Asset/Cover1Falah.jpeg">
+                  <source src="Asset/VidKafalah2.mp4" type="video/mp4" />
+                  Browser Anda tidak mendukung pemutar video HTML5.
+                </video>
+              </div>
+              <div class="px-4 py-2.5 bg-white border-t border-blue-100 flex items-center justify-between">
+                <span class="text-xs font-extrabold text-slate-800">Video Berkisah #2</span>
+                <span class="text-[11px] font-bold text-sq-blue">Masjid Al-</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. PEMINJAMAN SOUND SYSTEM ================= -->
+  <section id="sound-system" class="py-16 sm:py-20 bg-gradient-to-b from-blue-50/70 to-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          03 • Audio Rental
+          04 • Audio Rental
         </span>
         <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">PEMINJAMAN SOUND SYSTEM</h2>
         <p class="text-slate-600 text-sm sm:text-base">
@@ -253,7 +347,7 @@
 
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Paket Sound 1 -->
-        <div class="rounded-3xl p-7 bg-blue-50/50 border-2 border-blue-100 flex flex-col justify-between">
+        <div class="rounded-3xl p-7 bg-white border-2 border-blue-100 flex flex-col justify-between shadow-sm">
           <div>
             <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">Kapasitas 50–100 Orang</span>
             <h3 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Sound Intimate</h3>
@@ -289,7 +383,7 @@
         </div>
 
         <!-- Paket Sound 3 -->
-        <div class="rounded-3xl p-7 bg-blue-50/50 border-2 border-blue-100 flex flex-col justify-between">
+        <div class="rounded-3xl p-7 bg-white border-2 border-blue-100 flex flex-col justify-between shadow-sm">
           <div>
             <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">Kapasitas 300–700+ Orang</span>
             <h3 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Sound Full Band / Konser</h3>
@@ -309,12 +403,12 @@
     </div>
   </section>
 
-  <!-- ================= 4. DAFTAR HARGA OPTIONAL ================= -->
-  <section id="harga-optional" class="py-16 sm:py-20 bg-gradient-to-b from-blue-50/70 to-white">
+  <!-- ================= 5. DAFTAR HARGA OPTIONAL ================= -->
+  <section id="harga-optional" class="py-16 sm:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          04 • Price List Optional
+          05 • Price List Optional
         </span>
         <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">DAFTAR HARGA LAYANAN</h2>
         <p class="text-slate-600 text-sm sm:text-base">
@@ -334,6 +428,14 @@
               </tr>
             </thead>
             <tbody class="divide-y divide-blue-100 text-sm text-slate-700">
+              <tr class="hover:bg-blue-50/40 transition">
+                <td class="py-4 px-5 font-bold text-slate-900">Spesial Event: Berkisah Falah</td>
+                <td class="py-4 px-5">Storytelling Islami & Musik Akustik (Sesi 45–60 menit)</td>
+                <td class="py-4 px-5 font-extrabold text-sq-blue whitespace-nowrap">Hubungi Admin</td>
+                <td class="py-4 px-5 text-right">
+                  <button onclick="selectOptional('Spesial Event - Berkisah Falah')" class="text-xs font-bold bg-blue-50 text-sq-blue hover:bg-sq-blue hover:text-white px-3.5 py-2 rounded-lg transition">Pilih</button>
+                </td>
+              </tr>
               <tr class="hover:bg-blue-50/40 transition">
                 <td class="py-4 px-5 font-bold text-slate-900">Talent MC / Host Acara</td>
                 <td class="py-4 px-5">1 Orang MC (Durasi acara hingga 3 jam)</td>
@@ -389,8 +491,8 @@
     </div>
   </section>
 
-  <!-- ================= 5. FORM BOOKING OPTIONAL ================= -->
-  <section id="booking-optional" class="py-16 sm:py-24 bg-white">
+  <!-- ================= 6. FORM BOOKING OPTIONAL ================= -->
+  <section id="booking-optional" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50/60 to-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <form id="optionalBookingForm" class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-blue-100 shadow-sq space-y-4">
         <div class="text-center mb-4">
@@ -408,6 +510,7 @@
         <div>
           <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Layanan Optional yang Dibutuhkan</label>
           <select id="optService" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
+            <option value="Spesial Event - Berkisah Falah">Spesial Event - Berkisah Falah</option>
             <option value="Talent MC / Host Acara (Mulai Rp 1.000.000,-)">Talent MC / Host Acara (Mulai Rp 1.000.000,-)</option>
             <option value="Talent Soloist / Acoustic Duo (Mulai Rp 2.500.000,-)">Talent Soloist / Acoustic Duo (Mulai Rp 2.500.000,-)</option>
             <option value="Talent Qori & Sari Tilawah (Mulai Rp 800.000,-)">Talent Qori & Sari Tilawah (Mulai Rp 800.000,-)</option>
@@ -431,7 +534,7 @@
 
         <div>
           <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Detail Kebutuhan Acara</label>
-          <textarea id="optNotes" rows="3" placeholder="Contoh: Butuh MC + Sound System Gathering untuk acara wisuda..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm"></textarea>
+          <textarea id="optNotes" rows="3" placeholder="Contoh: Ingin mengundang Berkisah Falah untuk acara Ramadhan..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm"></textarea>
         </div>
 
         <button type="submit" class="w-full bg-sq-blue hover:bg-sq-dark text-white font-extrabold py-4 rounded-xl shadow-sq transition flex items-center justify-center gap-2">
