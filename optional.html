@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Optional Services — SQ Entertainment (Shoutul Qolbi)</title>
-  <meta name="description" content="Layanan tambahan SQ Entertainment: Talent Agency, Event Lainnya, Spesial Event Berkisah Falah, Daftar Harga, dan Peminjaman Sound System." />
+  <title>Pilihan Paket — SQ Entertainment (Shoutul Qolbi)</title>
+  <meta name="description" content="Pilihan Paket SQ Entertainment: Talent Agency, Event Lainnya, Spesial Event Berkisah Falah, Daftar Harga, dan Peminjaman Sound System." />
 
   <!-- Favicon menggunakan logo lokal -->
   <link rel="icon" href="Asset/LogoEmas.png" />
@@ -78,32 +78,32 @@
 
   <!-- ================= NAVBAR ================= -->
   <header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-blue-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-6 lg:gap-10">
+      <a href="index.html" class="flex items-center gap-3 shrink-0 group">
         <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950 overflow-hidden flex items-center justify-center border-2 border-sq-gold shadow-md group-hover:scale-105 transition">
           <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment" class="w-full h-full object-cover" />
         </div>
         <div>
-          <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-sq-blue block leading-none">SQ ENTERTAINMENT</span>
+          <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-sq-blue block leading-none whitespace-nowrap">SQ ENTERTAINMENT</span>
           <span class="text-[11px] sm:text-xs font-semibold text-slate-500 tracking-wide">Shoutul Qolbi</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-700">
-        <a href="index.html" class="hover:text-sq-blue transition">Beranda</a>
-        <a href="#talent" class="hover:text-sq-blue transition">Talent Agency</a>
-        <a href="#event-lain" class="hover:text-sq-blue transition">Event Lainnya</a>
-        <a href="#spesial-event" class="hover:text-sq-blue transition">Spesial Event</a>
-        <a href="#sound-system" class="hover:text-sq-blue transition">Sound System</a>
-        <a href="#harga-optional" class="hover:text-sq-blue transition">Daftar Harga</a>
-        <a href="optional.html" class="text-sq-blue font-extrabold border-b-2 border-sq-blue pb-0.5">Optional</a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-semibold text-slate-700">
+        <a href="index.html" class="hover:text-sq-blue transition whitespace-nowrap">Beranda</a>
+        <a href="#talent" class="hover:text-sq-blue transition whitespace-nowrap">Talent Agency</a>
+        <a href="#event-lain" class="hover:text-sq-blue transition whitespace-nowrap">Event Lainnya</a>
+        <a href="#spesial-event" class="hover:text-sq-blue transition whitespace-nowrap">Spesial Event</a>
+        <a href="#sound-system" class="hover:text-sq-blue transition whitespace-nowrap">Sound System</a>
+        <a href="#harga-optional" class="hover:text-sq-blue transition whitespace-nowrap">Daftar Harga</a>
+        <a href="optional.html" class="text-sq-blue font-extrabold border-b-2 border-sq-blue pb-0.5 whitespace-nowrap">Pilihan Paket</a>
       </nav>
 
-      <div class="flex items-center gap-2">
-        <a href="#booking-optional" class="bg-sq-blue hover:bg-sq-dark text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full shadow-sq transition transform hover:-translate-y-0.5">
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="#booking-optional" class="bg-sq-blue hover:bg-sq-dark text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-sq transition transform hover:-translate-y-0.5 whitespace-nowrap">
           Booking Layanan
         </a>
-        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-sq-blue hover:bg-blue-50" aria-label="Menu">
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-sq-blue hover:bg-blue-50" aria-label="Menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -111,7 +111,7 @@
       </div>
     </div>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-blue-100 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-slate-700">
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-blue-100 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-slate-700">
       <a href="index.html" class="block py-2 hover:text-sq-blue">← Kembali ke Beranda Utama</a>
       <a href="#talent" class="block py-2 hover:text-sq-blue">Talent Agency</a>
       <a href="#event-lain" class="block py-2 hover:text-sq-blue">Event Lainnya</a>
@@ -122,18 +122,18 @@
     </div>
   </header>
 
-  <!-- ================= HERO OPTIONAL ================= -->
+  <!-- ================= HERO PILIHAN PAKET ================= -->
   <section class="sq-hero-bg pt-28 pb-16 sm:pt-36 sm:pb-20 text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="inline-flex items-center gap-2 sq-pill-title px-4 py-1.5 rounded-full mb-5">
         <span class="w-2.5 h-2.5 rounded-full bg-sq-blue animate-pulse"></span>
         <span class="text-xs sm:text-sm font-extrabold text-sq-blue tracking-wide uppercase">
-          Optional Services & Event Support
+          Pilihan Paket & Event Support
         </span>
       </div>
 
       <h1 class="font-display font-black text-3xl sm:text-5xl text-slate-900 leading-tight mb-4">
-        OPTIONAL SERVICES
+        PILIHAN PAKET
         <span class="block text-sq-blue text-2xl sm:text-3xl mt-1">SQ Entertainment (Shoutul Qolbi)</span>
       </h1>
 
@@ -403,12 +403,12 @@
     </div>
   </section>
 
-  <!-- ================= 5. DAFTAR HARGA OPTIONAL ================= -->
+  <!-- ================= 5. DAFTAR HARGA PILIHAN PAKET ================= -->
   <section id="harga-optional" class="py-16 sm:py-20 bg-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          05 • Price List Optional
+          05 • Price List Pilihan Paket
         </span>
         <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">DAFTAR HARGA LAYANAN</h2>
         <p class="text-slate-600 text-sm sm:text-base">
@@ -491,13 +491,13 @@
     </div>
   </section>
 
-  <!-- ================= 6. FORM BOOKING OPTIONAL ================= -->
+  <!-- ================= 6. FORM BOOKING PILIHAN PAKET ================= -->
   <section id="booking-optional" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50/60 to-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <form id="optionalBookingForm" class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-blue-100 shadow-sq space-y-4">
         <div class="text-center mb-4">
           <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider mb-2">
-            Reservasi Layanan Optional
+            Reservasi Pilihan Paket
           </span>
           <h3 class="font-display font-black text-2xl text-slate-900">Tanyakan Ketersediaan & Penawaran</h3>
         </div>
@@ -508,7 +508,7 @@
         </div>
 
         <div>
-          <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Layanan Optional yang Dibutuhkan</label>
+          <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Pilihan Paket yang Dibutuhkan</label>
           <select id="optService" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
             <option value="Spesial Event - Berkisah Falah">Spesial Event - Berkisah Falah</option>
             <option value="Talent MC / Host Acara (Mulai Rp 1.000.000,-)">Talent MC / Host Acara (Mulai Rp 1.000.000,-)</option>
@@ -554,7 +554,7 @@
       </div>
       <div class="flex items-center gap-5 text-xs font-semibold">
         <a href="index.html" class="hover:text-white transition">Beranda Utama</a>
-        <a href="optional.html" class="text-white">Optional Services</a>
+        <a href="optional.html" class="text-white">Pilihan Paket</a>
       </div>
       <p class="text-xs">© 2026 SQ Entertainment. All rights reserved.</p>
     </div>
@@ -584,7 +584,7 @@
       const location = document.getElementById('optLocation').value;
       const notes = document.getElementById('optNotes').value || "-";
 
-      const message = `Assalamu'alaikum Admin *SQ Entertainment (Shoutul Qolbi)*,%0A%0ASaya ingin menanyakan layanan *Optional*:%0A• *Nama / Instansi:* ${encodeURIComponent(name)}%0A• *Layanan:* ${encodeURIComponent(service)}%0A• *Tanggal Acara:* ${encodeURIComponent(date)}%0A• *Lokasi:* ${encodeURIComponent(location)}%0A• *Detail Kebutuhan:* ${encodeURIComponent(notes)}%0A%0ATerima kasih.`;
+      const message = `Assalamu'alaikum Admin *SQ Entertainment (Shoutul Qolbi)*,%0A%0ASaya ingin menanyakan *Pilihan Paket*:%0A• *Nama / Instansi:* ${encodeURIComponent(name)}%0A• *Layanan:* ${encodeURIComponent(service)}%0A• *Tanggal Acara:* ${encodeURIComponent(date)}%0A• *Lokasi:* ${encodeURIComponent(location)}%0A• *Detail Kebutuhan:* ${encodeURIComponent(notes)}%0A%0ATerima kasih.`;
 
       window.open(`https://wa.me/${WHATSAPP_CP}?text=${message}`, '_blank');
     });
