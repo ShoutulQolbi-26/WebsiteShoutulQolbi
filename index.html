@@ -79,732 +79,808 @@
       backdrop-filter: blur(12px);
       border: 1.5px solid rgba(0, 86, 255, 0.14);
     }
+
+    /* Active state untuk floating pill icon */
+    .nav-pill-item.active {
+      background-color: #0F172A;
+      color: #A3E635;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+    }
   </style>
 </head>
 <body class="antialiased selection:bg-sq-blue selection:text-white">
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-blue-100">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-      <a href="#beranda" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950 overflow-hidden flex items-center justify-center border-2 border-sq-gold shadow-md group-hover:scale-105 transition">
-          <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment" class="w-full h-full object-cover" />
-        </div>
-        <div>
-          <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-sq-blue block leading-none">SQ ENTERTAINMENT</span>
-          <span class="text-[11px] sm:text-xs font-semibold text-slate-500 tracking-wide">Shoutul Qolbi</span>
-        </div>
+  <!-- ================= FLOATING VERTICAL PILL NAVBAR ================= -->
+  <aside aria-label="Navigasi Utama" class="fixed left-2.5 sm:left-5 top-1/2 -translate-y-1/2 z-50">
+    <nav class="flex flex-col items-center gap-2 sm:gap-2.5 bg-white/95 backdrop-blur-md p-2 rounded-full shadow-[0_14px_38px_rgba(15,23,42,0.14)] border border-blue-100/90">
+      
+      <!-- Brand / Beranda -->
+      <a href="#beranda" data-section="beranda" class="nav-pill-item active group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105">
+        <img src="Asset/PhotoProfileSQ.png" alt="Beranda SQ" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-sq-gold" />
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Beranda • SQ Entertainment
+        </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
-        <a href="#tentang" class="hover:text-sq-blue transition">Tentang Kami</a>
-        <a href="#rekam-jejak" class="hover:text-sq-blue transition">Rekam Jejak</a>
-        <a href="#layanan" class="hover:text-sq-blue transition">Layanan</a>
-        <a href="#personil" class="hover:text-sq-blue transition">Personil</a>
-        <a href="#paket" class="hover:text-sq-blue transition">Paket & Harga</a>
-        <a href="optional.html" class="text-sq-blue font-extrabold hover:text-sq-dark transition">Pilihan Paket</a>
-      </nav>
+      <!-- Tentang Kami -->
+      <a href="#tentang" data-section="tentang" class="nav-pill-item group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Tentang Kami
+        </span>
+      </a>
 
-      <div class="flex items-center gap-2">
-        <a href="#booking" class="bg-sq-blue hover:bg-sq-dark text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full shadow-sq transition transform hover:-translate-y-0.5">
+      <!-- Rekam Jejak -->
+      <a href="#rekam-jejak" data-section="rekam-jejak" class="nav-pill-item group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Rekam Jejak
+        </span>
+      </a>
+
+      <!-- Layanan -->
+      <a href="#layanan" data-section="layanan" class="nav-pill-item group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Layanan Kami
+        </span>
+      </a>
+
+      <!-- Personil -->
+      <a href="#personil" data-section="personil" class="nav-pill-item group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Personil & Tim
+        </span>
+      </a>
+
+      <!-- Paket & Harga -->
+      <a href="#paket" data-section="paket" class="nav-pill-item group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Paket & Harga
+        </span>
+      </a>
+
+      <!-- Pilihan Paket (Halaman optional.html) -->
+      <a href="optional.html" class="group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-sq-blue hover:bg-blue-50 transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-sq-blue text-white text-xs font-bold whitespace-nowrap shadow-lg">
+          Pilihan Paket →
+        </span>
+      </a>
+
+      <!-- Garis Pemisah Halus -->
+      <div class="w-6 h-[1px] bg-slate-200 my-0.5"></div>
+
+      <!-- Booking Event -->
+      <a href="#booking" data-section="booking" class="nav-pill-item group relative w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-white hover:bg-sq-blue transition-all duration-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
           Booking Event
-        </a>
-        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-sq-blue hover:bg-blue-50" aria-label="Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-    </div>
+        </span>
+      </a>
 
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-blue-100 px-4 pt-2 pb-4 space-y-2 text-sm font-semibold text-slate-700">
-      <a href="#tentang" class="block py-2 hover:text-sq-blue">Tentang Kami</a>
-      <a href="#rekam-jejak" class="block py-2 hover:text-sq-blue">Rekam Jejak</a>
-      <a href="#layanan" class="block py-2 hover:text-sq-blue">Layanan Acara</a>
-      <a href="#personil" class="block py-2 hover:text-sq-blue">Personil & Tim</a>
-      <a href="#paket" class="block py-2 hover:text-sq-blue">Paket & Price List</a>
-      <a href="optional.html" class="block py-2 text-sq-blue font-extrabold">Pilihan Paket (Talent & Sound System) →</a>
-      <a href="#booking" class="block py-2 text-sq-blue font-bold">Form Booking WhatsApp →</a>
-    </div>
-  </header>
+    </nav>
+  </aside>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section id="beranda" class="relative sq-hero-bg pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
-    <svg class="absolute top-12 left-0 w-full h-full pointer-events-none opacity-30" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M-80 420C140 280 340 560 620 430C900 300 1120 140 1520 260" stroke="#0056FF" stroke-width="14" stroke-linecap="round"/>
-      <path d="M-60 470C180 330 380 610 660 480C940 350 1160 190 1540 310" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
-    </svg>
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <div class="pl-14 sm:pl-20 xl:pl-0">
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-10 items-center">
-        <!-- Left Copy -->
-        <div class="lg:col-span-7 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 sq-pill-title px-4 py-1.5 rounded-full mb-6">
-            <span class="w-2.5 h-2.5 rounded-full bg-sq-blue animate-pulse"></span>
-            <span class="text-xs sm:text-sm font-extrabold text-sq-blue tracking-wide uppercase">
-              Modern Islamic & Universal Music Entertainment
-            </span>
-          </div>
+    <!-- ================= HERO SECTION ================= -->
+    <section id="beranda" class="relative sq-hero-bg pt-14 pb-20 sm:pt-24 sm:pb-28 overflow-hidden">
+      <svg class="absolute top-12 left-0 w-full h-full pointer-events-none opacity-30" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-80 420C140 280 340 560 620 430C900 300 1120 140 1520 260" stroke="#0056FF" stroke-width="14" stroke-linecap="round"/>
+        <path d="M-60 470C180 330 380 610 660 480C940 350 1160 190 1540 310" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+      </svg>
 
-          <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.1] tracking-tight mb-4">
-            SQ ENTERTAINMENT
-            <span class="block text-sq-blue mt-1">(Shoutul Qolbi)</span>
-          </h1>
-
-          <p class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
-            "Solusi Entertainment Religi Modern untuk Acara Anda!"
-          </p>
-
-          <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
-            Ingin menghadirkan suasana hangat, syahdu, sekaligus meriah di acara <strong>Wedding</strong>, <strong>Corporate Gathering</strong>, <strong>Konser Kemanusiaan</strong>, atau <strong>Event Ramadhan</strong> Anda? Kami membawakan lagu-lagu religi dengan sentuhan Pop, Melayu, Reggae, RnB, hingga Orchestra.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <a href="#paket" class="w-full sm:w-auto bg-sq-blue hover:bg-sq-dark text-white font-bold px-7 py-4 rounded-full shadow-sq-lg transition transform hover:-translate-y-0.5 text-center">
-              Lihat Paket Promo Launching
-            </a>
-            <a href="optional.html" class="w-full sm:w-auto bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold px-7 py-4 rounded-full transition text-center">
-              Pilihan Paket & Sound
-            </a>
-          </div>
-
-          <!-- Quick Highlights -->
-          <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 mt-10 pt-8 border-t border-blue-200/70">
-            <div>
-              <p class="font-display font-black text-2xl sm:text-3xl text-sq-blue">Live</p>
-              <p class="text-xs sm:text-sm font-semibold text-slate-600">& Studio Cover</p>
-            </div>
-            <div>
-              <p class="font-display font-black text-2xl sm:text-3xl text-sq-blue">4</p>
-              <p class="text-xs sm:text-sm font-semibold text-slate-600">Personil Utama</p>
-            </div>
-            <div>
-              <p class="font-display font-black text-2xl sm:text-3xl text-sq-blue">All-In</p>
-              <p class="text-xs sm:text-sm font-semibold text-slate-600">Bonus Video & Promo</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Visual Card (Style Feed SQ) -->
-        <div class="lg:col-span-5">
-          <div class="relative mx-auto max-w-md rounded-3xl bg-gradient-to-b from-sq-blue to-sq-dark p-6 sm:p-8 text-white shadow-sq-lg border-4 border-white">
-            <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-2 mb-6">
-              <span class="sq-gold-badge text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
-                Official Brand Profile
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <!-- Left Copy -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 sq-pill-title px-4 py-1.5 rounded-full mb-6">
+              <span class="w-2.5 h-2.5 rounded-full bg-sq-blue animate-pulse"></span>
+              <span class="text-xs sm:text-sm font-extrabold text-sq-blue tracking-wide uppercase">
+                Modern Islamic & Universal Music Entertainment
               </span>
-              <span class="text-xs font-semibold text-blue-100">@sq_entertainment26</span>
             </div>
 
-            <!-- Profile / Logo Utama (Gambar Lokal) -->
-            <div class="text-center my-6">
-              <div class="w-24 h-24 mx-auto rounded-full bg-slate-950 overflow-hidden border-4 border-sq-gold flex items-center justify-center shadow-xl mb-4">
-                <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment (Shoutul Qolbi)" class="w-full h-full object-cover" />
-              </div>
-              <h2 class="font-display font-black text-2xl sm:text-3xl tracking-tight">SHOUTUL QOLBI</h2>
-              <p class="text-blue-100 text-sm font-medium mt-1">Musik Religi & Kemanusiaan</p>
+            <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-[1.1] tracking-tight mb-4">
+              SQ ENTERTAINMENT
+              <span class="block text-sq-blue mt-1">(Shoutul Qolbi)</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl font-bold text-slate-800 mb-3">
+              "Solusi Entertainment Religi Modern untuk Acara Anda!"
+            </p>
+
+            <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8">
+              Ingin menghadirkan suasana hangat, syahdu, sekaligus meriah di acara <strong>Wedding</strong>, <strong>Corporate Gathering</strong>, <strong>Konser Kemanusiaan</strong>, atau <strong>Event Ramadhan</strong> Anda? Kami membawakan lagu-lagu religi dengan sentuhan Pop, Melayu, Reggae, RnB, hingga Orchestra.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#paket" class="w-full sm:w-auto bg-sq-blue hover:bg-sq-dark text-white font-bold px-7 py-4 rounded-full shadow-sq-lg transition transform hover:-translate-y-0.5 text-center">
+                Lihat Paket Promo Launching
+              </a>
+              <a href="optional.html" class="w-full sm:w-auto bg-white hover:bg-blue-50 text-sq-blue border-2 border-sq-blue font-bold px-7 py-4 rounded-full transition text-center">
+                Pilihan Paket & Sound
+              </a>
             </div>
 
-            <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/25 space-y-2.5 text-sm">
-              <div class="flex items-center justify-between">
-                <span class="text-blue-100">Special Launching Rate</span>
-                <span class="font-display font-extrabold text-lg text-sq-goldLight">Rp 7.500.000,-</span>
+            <!-- Quick Highlights -->
+            <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 mt-10 pt-8 border-t border-blue-200/70">
+              <div>
+                <p class="font-display font-black text-2xl sm:text-3xl text-sq-blue">Live</p>
+                <p class="text-xs sm:text-sm font-semibold text-slate-600">& Studio Cover</p>
               </div>
-              <div class="flex items-center justify-between text-xs text-blue-100 pt-2 border-t border-white/20">
-                <span>✓ Up to 60 Menit (8–10 Lagu)</span>
-                <span>✓ Bonus Recap Video</span>
+              <div>
+                <p class="font-display font-black text-2xl sm:text-3xl text-sq-blue">4</p>
+                <p class="text-xs sm:text-sm font-semibold text-slate-600">Personil Utama</p>
+              </div>
+              <div>
+                <p class="font-display font-black text-2xl sm:text-3xl text-sq-blue">All-In</p>
+                <p class="text-xs sm:text-sm font-semibold text-slate-600">Bonus Video & Promo</p>
               </div>
             </div>
-
-            <a href="#booking" class="mt-6 block w-full bg-white text-sq-blue hover:bg-blue-50 font-extrabold text-center py-3.5 rounded-xl shadow-md transition">
-              Cek Jadwal & Booking Sekarang
-            </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ================= 1. TENTANG KAMI (ABOUT US) ================= -->
-  <section id="tentang" class="py-16 sm:py-24 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10">
-        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          01 • About Us
-        </span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900">TENTANG KAMI</h2>
-      </div>
+          <!-- Right Visual Card (Style Feed SQ) -->
+          <div class="lg:col-span-5">
+            <div class="relative mx-auto max-w-md rounded-3xl bg-gradient-to-b from-sq-blue to-sq-dark p-6 sm:p-8 text-white shadow-sq-lg border-4 border-white">
+              <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-2 mb-6">
+                <span class="sq-gold-badge text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap">
+                  Official Brand Profile
+                </span>
+                <span class="text-xs font-semibold text-blue-100">@sq_entertainment26</span>
+              </div>
 
-      <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-sq relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-40 h-40 bg-blue-100/60 rounded-bl-full -z-10"></div>
-        <div class="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
-          <p>
-            <strong class="text-sq-blue">SQ Entertainment (Shoutul Qolbi)</strong> adalah grup musik religi modern yang menghadirkan warna baru dalam belantika musik Islami dan kemanusiaan. Berbeda dengan grup nasyid atau musik religi konvensional, SQ Entertainment memadukan pesan-pesan kebaikan, syiar, dan kemanusiaan dengan eksplorasi ragam aransemen musik yang kaya dan adaptif.
-          </p>
-          <p>
-            Kami percaya bahwa musik religi tidak terbatas pada satu warna saja. SQ Entertainment hadir untuk mengisi ruang dengar masyarakat modern di berbagai platform digital maupun panggung <em>live performance offline</em>, serta menjadi solusi hiburan Islami yang berkelas untuk beragam segmen acara.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+              <!-- Profile / Logo Utama (Gambar Lokal) -->
+              <div class="text-center my-6">
+                <div class="w-24 h-24 mx-auto rounded-full bg-slate-950 overflow-hidden border-4 border-sq-gold flex items-center justify-center shadow-xl mb-4">
+                  <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment (Shoutul Qolbi)" class="w-full h-full object-cover" />
+                </div>
+                <h2 class="font-display font-black text-2xl sm:text-3xl tracking-tight">SHOUTUL QOLBI</h2>
+                <p class="text-blue-100 text-sm font-medium mt-1">Musik Religi & Kemanusiaan</p>
+              </div>
 
-  <!-- ================= 2. REKAM JEJAK & PORTOFOLIO ================= -->
-  <section id="rekam-jejak" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50/70 to-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          02 • Portofolio & Dokumentasi
-        </span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">REKAM JEJAK</h2>
-        <p class="text-slate-600 text-base sm:text-lg">
-          Saksikan langsung cuplikan penampilan panggung, momen di balik layar, hingga karya musik cover SQ Entertainment.
-        </p>
-      </div>
-
-      <!-- 3 Card Berderet dengan Preview Thumbnail & Player YouTube -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Card 1: PERFORM -->
-        <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq-lg transition flex flex-col justify-between">
-          <div>
-            <div onclick="playYouTubeEmbed(this, 'XpaFNNtKat0')" class="group/vid relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 mb-5 shadow-md cursor-pointer">
-              <img src="Asset/Thumbnail1.png" alt="Perform SQ Entertainment" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" />
-              <div class="absolute inset-0 bg-slate-950/30 group-hover/vid:bg-slate-950/15 transition flex items-center justify-center">
-                <div class="w-14 h-14 rounded-full bg-sq-blue text-white flex items-center justify-center shadow-lg group-hover/vid:scale-110 transition">
-                  <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/25 space-y-2.5 text-sm">
+                <div class="flex items-center justify-between">
+                  <span class="text-blue-100">Special Launching Rate</span>
+                  <span class="font-display font-extrabold text-lg text-sq-goldLight">Rp 7.500.000,-</span>
+                </div>
+                <div class="flex items-center justify-between text-xs text-blue-100 pt-2 border-t border-white/20">
+                  <span>✓ Up to 60 Menit (8–10 Lagu)</span>
+                  <span>✓ Bonus Recap Video</span>
                 </div>
               </div>
+
+              <a href="#booking" class="mt-6 block w-full bg-white text-sq-blue hover:bg-blue-50 font-extrabold text-center py-3.5 rounded-xl shadow-md transition">
+                Cek Jadwal & Booking Sekarang
+              </a>
             </div>
-
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="font-display font-black text-xl sm:text-2xl text-slate-900">Perform</h3>
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-sq-blue bg-blue-50 px-3 py-1 rounded-full">
-                01 • Live Stage
-              </span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">
-              Perform Di Acara Pembukaan MUNAS IV IKADI 20 November 2026 Di menit ke 0 hingga menit 31:21 Dan Di menit 2:56:11 Hingga Selesai 
-            </p>
           </div>
-
-          <a href="https://www.youtube.com/live/XpaFNNtKat0?si=UTirEl7DBgGzXnqa" target="_blank" rel="noopener noreferrer" class="pt-4 border-t border-blue-50 flex items-center justify-between text-sm font-extrabold text-sq-blue hover:text-sq-dark transition group">
-            <span>Buka Video Perform di YouTube</span>
-            <span class="group-hover:translate-x-1 transition-transform">↗</span>
-          </a>
-        </div>
-
-        <!-- Card 2: BEHIND THE SCENE -->
-        <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq-lg transition flex flex-col justify-between">
-          <div>
-            <div onclick="playYouTubeEmbed(this, '89Yrlo8M8PY')" class="group/vid relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 mb-5 shadow-md cursor-pointer">
-              <img src="https://i.ytimg.com/vi/89Yrlo8M8PY/hqdefault.jpg" alt="Behind the Scene SQ Entertainment" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" />
-              <div class="absolute inset-0 bg-slate-950/30 group-hover/vid:bg-slate-950/15 transition flex items-center justify-center">
-                <div class="w-14 h-14 rounded-full bg-sq-blue text-white flex items-center justify-center shadow-lg group-hover/vid:scale-110 transition">
-                  <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="font-display font-black text-xl sm:text-2xl text-slate-900">Sholawat Asgyl Shoubee</h3>
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-sq-blue bg-blue-50 px-3 py-1 rounded-full">
-                02 • Sholawat
-              </span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">
-              "Barang siapa bersholawat kepadaku satu kali, Allah akan bersholawat kepadanya sepuluh kali." (HR. Muslim) 🤍
-            </p>
-          </div>
-
-          <a href="https://youtu.be/89Yrlo8M8PY?si=TX_gPG_HQyuLclHj" target="_blank" rel="noopener noreferrer" class="pt-4 border-t border-blue-50 flex items-center justify-between text-sm font-extrabold text-sq-blue hover:text-sq-dark transition group">
-            <span>Tonton Behind the Scene di YouTube</span>
-            <span class="group-hover:translate-x-1 transition-transform">↗</span>
-          </a>
-        </div>
-
-        <!-- Card 3: COVERING -->
-        <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq-lg transition flex flex-col justify-between">
-          <div>
-            <div onclick="playYouTubeEmbed(this, 'X1OJNPAdpI0')" class="group/vid relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 mb-5 shadow-md cursor-pointer">
-              <img src="https://i.ytimg.com/vi/X1OJNPAdpI0/hqdefault.jpg" alt="Senandung Sholawat SQ Entertainment" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" />
-              <div class="absolute inset-0 bg-slate-950/30 group-hover/vid:bg-slate-950/15 transition flex items-center justify-center">
-                <div class="w-14 h-14 rounded-full bg-sq-blue text-white flex items-center justify-center shadow-lg group-hover/vid:scale-110 transition">
-                  <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="font-display font-black text-xl sm:text-2xl text-slate-900">Sholawat</h3>
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-sq-blue bg-blue-50 px-3 py-1 rounded-full">
-                03 • Sholawat
-              </span>
-            </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">
-              Koleksi karya audio-visual lagu religi, shalawat, dan lagu kemanusiaan yang diaransemen ulang dengan harmoni vokal Shoutul Qolbi.
-            </p>
-          </div>
-
-          <a href="https://youtu.be/X1OJNPAdpI0?si=3z9ml5i0T9XWauPM" target="_blank" rel="noopener noreferrer" class="pt-4 border-t border-blue-50 flex items-center justify-between text-sm font-extrabold text-sq-blue hover:text-sq-dark transition group">
-            <span>Tonton Karya Senandung Sholawat di YouTube</span>
-            <span class="group-hover:translate-x-1 transition-transform">↗</span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 3. LAYANAN KAMI & 4. KEUNGGULAN KAMI ================= -->
-  <section id="layanan" class="py-16 sm:py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          03 • Our Services
-        </span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">LAYANAN KAMI</h2>
-        <p class="text-slate-600 text-base">
-          SQ Entertainment siap memenuhi kebutuhan pengisi acara untuk berbagai konsep kegiatan.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6 mb-20">
-        <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
-          <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
-            Pop Akustik • Ballad • RnB
-          </div>
-          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Wedding & Private Event</h3>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Pengiring pernikahan Islami / Pernikahan Modern dengan lagu-lagu romantis religi bergenre Pop Akustik, Ballad, dan RnB.
-          </p>
-        </div>
-
-        <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
-          <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
-            Upbeat • Interactive Set
-          </div>
-          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Corporate & Gathering</h3>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Hiburan dalam acara Perusahaan, Family Gathering, dan Halal Bihalal dengan aransemen upbeat, interaktif, dan penuh kehangatan.
-          </p>
-        </div>
-
-        <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
-          <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
-            Haroki • Orchestra • Humanitarian Ballad
-          </div>
-          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Konser Kemanusiaan & Palestine</h3>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Penampilan bertema kepedulian sosial dan solidaritas Palestina dengan aransemen Haroki, Orchestra, dan Humanitarian Ballad yang menggugah empati.
-          </p>
-        </div>
-
-        <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
-          <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
-            Special Ramadhan Hits & Shalawat
-          </div>
-          <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Event Ramadhan & Hari Besar</h3>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Paket pertunjukan khusus bulan Suci Ramadhan, Konser Buka Puasa Bersama, Santunan, hingga Peringatan Hari Besar Islam (PHBI).
-          </p>
         </div>
       </div>
+    </section>
 
-      <!-- 4. KEUNGGULAN KAMI -->
-      <div class="rounded-3xl bg-sq-blue text-white p-8 sm:p-12 shadow-sq-lg">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="inline-block bg-white text-sq-blue font-display font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider mb-3">
-            04 • Why Choose Us?
+    <!-- ================= 1. TENTANG KAMI (ABOUT US) ================= -->
+    <section id="tentang" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            01 • About Us
           </span>
-          <h2 class="font-display font-black text-2xl sm:text-4xl">KEUNGGULAN KAMI</h2>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900">TENTANG KAMI</h2>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
-            <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">01</span>
-            <h4 class="font-bold text-lg mb-1.5">Fleksibilitas Aransemen</h4>
-            <p class="text-blue-100 text-sm leading-relaxed">
-              Mampu menyesuaikan setlist dan aransemen lagu sesuai dengan tema dan ambience acara klien.
+        <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-sq relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-blue-100/60 rounded-bl-full -z-10"></div>
+          <div class="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed">
+            <p>
+              <strong class="text-sq-blue">SQ Entertainment (Shoutul Qolbi)</strong> adalah grup musik religi modern yang menghadirkan warna baru dalam belantika musik Islami dan kemanusiaan. Berbeda dengan grup nasyid atau musik religi konvensional, SQ Entertainment memadukan pesan-pesan kebaikan, syiar, dan kemanusiaan dengan eksplorasi ragam aransemen musik yang kaya dan adaptif.
             </p>
-          </div>
-
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
-            <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">02</span>
-            <h4 class="font-bold text-lg mb-1.5">Performa Profesional & Adaptif</h4>
-            <p class="text-blue-100 text-sm leading-relaxed">
-              Mengombinasikan harmoni vokal yang matang dengan stage act yang komunikatif.
-            </p>
-          </div>
-
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
-            <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">03</span>
-            <h4 class="font-bold text-lg mb-1.5">Materi & Portofolio Aktif</h4>
-            <p class="text-blue-100 text-sm leading-relaxed">
-              Memiliki saluran media sosial aktif dengan portofolio video perform cover yang diperbarui secara berkala.
-            </p>
-          </div>
-
-          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
-            <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">04</span>
-            <h4 class="font-bold text-lg mb-1.5">Solusi Entertainment Terpadu</h4>
-            <p class="text-blue-100 text-sm leading-relaxed">
-              Siap bekerja sama dengan Event Organizer (EO) maupun Wedding Organizer (WO) untuk menyukseskan acara.
+            <p>
+              Kami percaya bahwa musik religi tidak terbatas pada satu warna saja. SQ Entertainment hadir untuk mengisi ruang dengar masyarakat modern di berbagai platform digital maupun panggung <em>live performance offline</em>, serta menjadi solusi hiburan Islami yang berkelas untuk beragam segmen acara.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= 5. PERSONIL & TIM ================= -->
-  <section id="personil" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50/60 to-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          05 • Personil & Tim
-        </span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">PERSONIL UTAMA SQ</h2>
-        <p class="text-slate-600 text-base">
-          4 Personil Utama (Tim Vokal & Instrumen Utama) didukung oleh Tim Media & Kreatif.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-10">
-        <!-- Personil 1: ANDREI -->
-        <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
-          <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
-            <img src="Asset/FeedAndrei.png" alt="Andrei - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
-            <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
-              <span class="font-display font-black text-4xl">A</span>
-              <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
-            </div>
-          </div>
-          <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
-            <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">ANDREI</span>
-          </div>
-          <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
-        </div>
-
-        <!-- Personil 2: FALAH -->
-        <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
-          <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
-            <img src="Asset/FeedFalah.png" alt="Falah - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
-            <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
-              <span class="font-display font-black text-4xl">F</span>
-              <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
-            </div>
-          </div>
-          <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
-            <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">FALAH</span>
-          </div>
-          <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
-        </div>
-
-        <!-- Personil 3: DEDE -->
-        <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
-          <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
-            <img src="Asset/FeedDede.png" alt="Dede - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
-            <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
-              <span class="font-display font-black text-4xl">D</span>
-              <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
-            </div>
-          </div>
-          <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
-            <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">DEDE</span>
-          </div>
-          <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
-        </div>
-
-        <!-- Personil 4: YUSUF -->
-        <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
-          <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
-            <img src="Asset/FeedYusuf.png" alt="Yusuf - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
-            <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
-              <span class="font-display font-black text-4xl">Y</span>
-              <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
-            </div>
-          </div>
-          <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
-            <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">YUSUF</span>
-          </div>
-          <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
-        </div>
-      </div>
-
-      <div class="glass-card rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-blue-200">
-        <div class="flex items-center gap-4 text-center sm:text-left">
-          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-sq-blue flex items-center justify-center shrink-0 mx-auto sm:mx-0">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-display font-extrabold text-slate-900">Tim Media & Kreatif SQ Entertainment</h4>
-            <p class="text-sm text-slate-600">Tim Khusus Pengelola Konten Audio-Visual, Dokumentasi Acara, & Promosi Media Sosial.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 6. PAKET PENAWARAN & PRICE LIST ================= -->
-  <section id="paket" class="py-16 sm:py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-14">
-        <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
-          06 • Proposal & Price List
-        </span>
-        <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">
-          SPESIAL PROMO LAUNCHING & RAMADHAN
-        </h2>
-        <p class="text-slate-600 text-base">
-          Sebagai bentuk apresiasi di awal perjalanan SQ Entertainment serta menyambut periode bulan suci Ramadhan, kami menghadirkan penawaran khusus dengan kualitas penampilan dan aransemen musik profesional.
-        </p>
-      </div>
-
-      <!-- HIGHLIGHT CARD -->
-      <div class="rounded-3xl bg-gradient-to-br from-sq-blue via-sq-blue to-sq-dark text-white p-8 sm:p-12 shadow-sq-lg border-4 border-blue-200 mb-14 relative overflow-hidden">
-        <div class="grid lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-5 text-center lg:text-left lg:border-r lg:border-white/20 lg:pr-8">
-            <span class="sq-gold-badge text-slate-950 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-4">
-              Best Value • Special Launching Rate
-            </span>
-            <h3 class="font-display font-black text-2xl sm:text-3xl mb-2">PAKET ALL-IN PERFORMANCE</h3>
-            <div class="my-5">
-              <span class="font-display font-black text-4xl sm:text-5xl text-sq-goldLight">Rp 7.500.000,-</span>
-              <span class="block text-blue-100 font-semibold text-sm mt-1">/ Event (Pertunjukan)</span>
-            </div>
-            <p class="text-blue-100 text-sm leading-relaxed mb-6">
-              Sudah termasuk penampilan lengkap 4 personil utama hingga 60 menit beserta bonus video recap dan publikasi media sosial.
-            </p>
-            <button onclick="selectPackage('Paket All-In Performance (Rp 7.500.000,-)')" class="w-full bg-white text-sq-blue hover:bg-blue-50 font-extrabold py-4 px-6 rounded-2xl shadow-lg transition transform hover:-translate-y-0.5">
-              Pilih Paket Ini →
-            </button>
-          </div>
-
-          <div class="lg:col-span-7 space-y-6">
-            <div>
-              <h4 class="font-display font-bold text-lg text-sq-goldLight mb-3">Spesifikasi & Fasilitas yang Didapat Klien:</h4>
-              <ul class="space-y-2.5 text-sm sm:text-base text-white">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-sq-goldLight font-bold">✓</span>
-                  <span><strong>Durasi Penampilan:</strong> Up to 60 Menit (Total 8–10 Lagu) atau disesuaikan dengan susunan acara klien.</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-sq-goldLight font-bold">✓</span>
-                  <span><strong>Personil Utama:</strong> 4 Personil SQ Entertainment (Vokal & Instrumen Utama).</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-sq-goldLight font-bold">✓</span>
-                  <span><strong>Pilihan Setlist (Fleksibel):</strong> Wedding Islami (Pop Akustik, Ballad, RnB), Corporate Gathering (Upbeat Pop, Pop Melayu), Konser Kemanusiaan/Palestine (Haroki, Spirit, Orchestral), atau Event Ramadhan (Hits & Medley Shalawat).</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 border border-white/25">
-              <h4 class="font-display font-bold text-base text-sq-goldLight mb-2.5">🎁 Bonus Fasilitas Media & Promosi:</h4>
-              <ul class="space-y-2 text-sm text-blue-50">
-                <li><strong>• Digital Poster Cross-Promotion:</strong> Publikasi acara klien di seluruh akun media sosial SQ Entertainment (Instagram, TikTok, YouTube).</li>
-                <li><strong>• Short Event Recap Video:</strong> Tim media SQ mendokumentasikan penampilan dan membuatkan 1 video recap/highlight acara (30–60 detik) untuk dokumentasi klien.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAKET PENAWARAN KHUSUS RAMADHAN -->
-      <div class="mb-14">
-        <h3 class="font-display font-black text-2xl text-slate-900 text-center mb-8">
-          PAKET PENAWARAN KHUSUS RAMADHAN
-        </h3>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="rounded-3xl p-7 bg-blue-50/60 border-2 border-blue-200 flex flex-col justify-between">
-            <div>
-              <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">
-                30–45 Menit • 4–6 Lagu
-              </span>
-              <h4 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Intimate / Gathering</h4>
-              <ul class="space-y-2 text-sm text-slate-700 mb-6">
-                <li><strong>• Durasi:</strong> 30–45 Menit (4–6 Lagu)</li>
-                <li><strong>• Format:</strong> Acoustic / Pop Religi Set</li>
-                <li><strong>• Cocok untuk:</strong> Buka Puasa Bersama Perusahaan, Halal Bihalal, Event Komunitas.</li>
-              </ul>
-            </div>
-            <button onclick="selectPackage('Paket Intimate / Gathering Ramadhan (30-45 Menit)')" class="w-full py-3 rounded-xl bg-white border-2 border-sq-blue text-sq-blue font-bold hover:bg-sq-blue hover:text-white transition">
-              Tanyakan Paket Intimate
-            </button>
-          </div>
-
-          <div class="rounded-3xl p-7 bg-blue-50/60 border-2 border-blue-200 flex flex-col justify-between">
-            <div>
-              <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">
-                60–90 Menit • 8–12 Lagu
-              </span>
-              <h4 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Concert / Main Event</h4>
-              <ul class="space-y-2 text-sm text-slate-700 mb-6">
-                <li><strong>• Durasi:</strong> 60–90 Menit (8–12 Lagu)</li>
-                <li><strong>• Format:</strong> Full Band (Haroki, Orchestra, Pop, Reggae)</li>
-                <li><strong>• Cocok untuk:</strong> Konser Ramadhan, Event Mal, Konser Peduli Palestina / Kemanusiaan.</li>
-              </ul>
-            </div>
-            <button onclick="selectPackage('Paket Concert / Main Event Ramadhan (60-90 Menit)')" class="w-full py-3 rounded-xl bg-white border-2 border-sq-blue text-sq-blue font-bold hover:bg-sq-blue hover:text-white transition">
-              Tanyakan Paket Concert
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- SYARAT & KETENTUAN -->
-      <div class="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-8">
-        <h3 class="font-display font-extrabold text-lg text-slate-900 mb-4">Syarat & Ketentuan (Terms & Conditions)</h3>
-        <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
-          <div>
-            <p class="font-bold text-slate-900 mb-1">1. Skope Harga</p>
-            <p>Biaya Rp 7.500.000 merupakan fee penampilan per pertunjukan (per event). Berlaku untuk wilayah operasional utama (Kota/Kabupaten asal); acara di luar kota terdapat penyesuaian biaya akomodasi/transportasi.</p>
-          </div>
-          <div>
-            <p class="font-bold text-slate-900 mb-1">2. Kebutuhan Teknis (Sound System)</p>
-            <p>Pihak klien/penyelenggara menyediakan sistem tata suara (Sound System) dan perlengkapan panggung standar sesuai kebutuhan riders musik SQ Entertainment. <em>(Tersedia juga opsi sewa Sound System dari tim kami di halaman <a href="optional.html#sound-system" class="text-sq-blue font-bold underline">Pilihan Paket</a>)</em>.</p>
-          </div>
-          <div>
-            <p class="font-bold text-slate-900 mb-1">3. Sistem Pembayaran</p>
-            <p><strong>DP (Down Payment):</strong> 50% saat konfirmasi pemesanan / penandatanganan kesepakatan.<br><strong>Pelunasan:</strong> Maksimal H-1 sebelum hari H penampilan.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 7. BOOKING & KONTAK MEDIA SOSIAL ================= -->
-  <section id="booking" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50 to-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-10 items-start">
-        <div class="lg:col-span-5 space-y-6">
-          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
-            07 • Kontak & Booking
+    <!-- ================= 2. REKAM JEJAK & PORTOFOLIO ================= -->
+    <section id="rekam-jejak" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50/70 to-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            02 • Portofolio & Dokumentasi
           </span>
-          <h2 class="font-display font-black text-3xl text-slate-900 leading-tight">
-            Hadirkan SQ Entertainment di Acara Anda
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">REKAM JEJAK</h2>
+          <p class="text-slate-600 text-base sm:text-lg">
+            Saksikan langsung cuplikan penampilan panggung, momen di balik layar, hingga karya musik cover SQ Entertainment.
+          </p>
+        </div>
+
+        <!-- 3 Card Berderet dengan Preview Thumbnail & Player YouTube -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1: PERFORM -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq-lg transition flex flex-col justify-between">
+            <div>
+              <div onclick="playYouTubeEmbed(this, 'XpaFNNtKat0')" class="group/vid relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 mb-5 shadow-md cursor-pointer">
+                <img src="Asset/Thumbnail1.png" alt="Perform SQ Entertainment" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" />
+                <div class="absolute inset-0 bg-slate-950/30 group-hover/vid:bg-slate-950/15 transition flex items-center justify-center">
+                  <div class="w-14 h-14 rounded-full bg-sq-blue text-white flex items-center justify-center shadow-lg group-hover/vid:scale-110 transition">
+                    <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-display font-black text-xl sm:text-2xl text-slate-900">Perform</h3>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-sq-blue bg-blue-50 px-3 py-1 rounded-full">
+                  01 • Live Stage
+                </span>
+              </div>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Perform Di Acara Pembukaan MUNAS IV IKADI 20 November 2026 Di menit ke 0 hingga menit 31:21 Dan Di menit 2:56:11 Hingga Selesai 
+              </p>
+            </div>
+
+            <a href="https://www.youtube.com/live/XpaFNNtKat0?si=UTirEl7DBgGzXnqa" target="_blank" rel="noopener noreferrer" class="pt-4 border-t border-blue-50 flex items-center justify-between text-sm font-extrabold text-sq-blue hover:text-sq-dark transition group">
+              <span>Buka Video Perform di YouTube</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
+          </div>
+
+          <!-- Card 2: SHOLAWAT ASGYL SHOUBEE -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq-lg transition flex flex-col justify-between">
+            <div>
+              <div onclick="playYouTubeEmbed(this, '89Yrlo8M8PY')" class="group/vid relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 mb-5 shadow-md cursor-pointer">
+                <img src="https://i.ytimg.com/vi/89Yrlo8M8PY/hqdefault.jpg" alt="Sholawat Asgyl Shoubee SQ Entertainment" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" />
+                <div class="absolute inset-0 bg-slate-950/30 group-hover/vid:bg-slate-950/15 transition flex items-center justify-center">
+                  <div class="w-14 h-14 rounded-full bg-sq-blue text-white flex items-center justify-center shadow-lg group-hover/vid:scale-110 transition">
+                    <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-display font-black text-xl sm:text-2xl text-slate-900">Sholawat Asgyl Shoubee</h3>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-sq-blue bg-blue-50 px-3 py-1 rounded-full">
+                  02 • Sholawat
+                </span>
+              </div>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                "Barang siapa bersholawat kepadaku satu kali, Allah akan bersholawat kepadanya sepuluh kali." (HR. Muslim) 🤍
+              </p>
+            </div>
+
+            <a href="https://youtu.be/89Yrlo8M8PY?si=TX_gPG_HQyuLclHj" target="_blank" rel="noopener noreferrer" class="pt-4 border-t border-blue-50 flex items-center justify-between text-sm font-extrabold text-sq-blue hover:text-sq-dark transition group">
+              <span>Tonton Sholawat Asgyl di YouTube</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
+          </div>
+
+          <!-- Card 3: SHOLAWAT -->
+          <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-blue-100 hover:border-sq-blue shadow-sm hover:shadow-sq-lg transition flex flex-col justify-between">
+            <div>
+              <div onclick="playYouTubeEmbed(this, 'X1OJNPAdpI0')" class="group/vid relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 mb-5 shadow-md cursor-pointer">
+                <img src="https://i.ytimg.com/vi/X1OJNPAdpI0/hqdefault.jpg" alt="Senandung Sholawat SQ Entertainment" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" />
+                <div class="absolute inset-0 bg-slate-950/30 group-hover/vid:bg-slate-950/15 transition flex items-center justify-center">
+                  <div class="w-14 h-14 rounded-full bg-sq-blue text-white flex items-center justify-center shadow-lg group-hover/vid:scale-110 transition">
+                    <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-display font-black text-xl sm:text-2xl text-slate-900">Sholawat</h3>
+                <span class="text-[11px] font-extrabold uppercase tracking-wider text-sq-blue bg-blue-50 px-3 py-1 rounded-full">
+                  03 • Sholawat
+                </span>
+              </div>
+              <p class="text-slate-600 text-sm leading-relaxed mb-5">
+                Koleksi karya audio-visual lagu religi, shalawat, dan lagu kemanusiaan yang diaransemen ulang dengan harmoni vokal Shoutul Qolbi.
+              </p>
+            </div>
+
+            <a href="https://youtu.be/X1OJNPAdpI0?si=3z9ml5i0T9XWauPM" target="_blank" rel="noopener noreferrer" class="pt-4 border-t border-blue-50 flex items-center justify-between text-sm font-extrabold text-sq-blue hover:text-sq-dark transition group">
+              <span>Tonton Karya Senandung Sholawat di YouTube</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. LAYANAN KAMI & 4. KEUNGGULAN KAMI ================= -->
+    <section id="layanan" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            03 • Our Services
+          </span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">LAYANAN KAMI</h2>
+          <p class="text-slate-600 text-base">
+            SQ Entertainment siap memenuhi kebutuhan pengisi acara untuk berbagai konsep kegiatan.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-20">
+          <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
+            <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
+              Pop Akustik • Ballad • RnB
+            </div>
+            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Wedding & Private Event</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Pengiring pernikahan Islami / Pernikahan Modern dengan lagu-lagu romantis religi bergenre Pop Akustik, Ballad, dan RnB.
+            </p>
+          </div>
+
+          <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
+            <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
+              Upbeat • Interactive Set
+            </div>
+            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Corporate & Gathering</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Hiburan dalam acara Perusahaan, Family Gathering, dan Halal Bihalal dengan aransemen upbeat, interaktif, dan penuh kehangatan.
+            </p>
+          </div>
+
+          <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
+            <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
+              Haroki • Orchestra • Humanitarian Ballad
+            </div>
+            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Konser Kemanusiaan & Palestine</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Penampilan bertema kepedulian sosial dan solidaritas Palestina dengan aransemen Haroki, Orchestra, dan Humanitarian Ballad yang menggugah empati.
+            </p>
+          </div>
+
+          <div class="rounded-3xl p-7 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 shadow-sm">
+            <div class="inline-block bg-sq-blue text-white text-xs font-extrabold px-3 py-1 rounded-full mb-3">
+              Special Ramadhan Hits & Shalawat
+            </div>
+            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Event Ramadhan & Hari Besar</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Paket pertunjukan khusus bulan Suci Ramadhan, Konser Buka Puasa Bersama, Santunan, hingga Peringatan Hari Besar Islam (PHBI).
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. KEUNGGULAN KAMI -->
+        <div class="rounded-3xl bg-sq-blue text-white p-8 sm:p-12 shadow-sq-lg">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="inline-block bg-white text-sq-blue font-display font-extrabold text-xs px-4 py-1 rounded-full uppercase tracking-wider mb-3">
+              04 • Why Choose Us?
+            </span>
+            <h2 class="font-display font-black text-2xl sm:text-4xl">KEUNGGULAN KAMI</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
+              <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">01</span>
+              <h4 class="font-bold text-lg mb-1.5">Fleksibilitas Aransemen</h4>
+              <p class="text-blue-100 text-sm leading-relaxed">
+                Mampu menyesuaikan setlist dan aransemen lagu sesuai dengan tema dan ambience acara klien.
+              </p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
+              <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">02</span>
+              <h4 class="font-bold text-lg mb-1.5">Performa Profesional & Adaptif</h4>
+              <p class="text-blue-100 text-sm leading-relaxed">
+                Mengombinasikan harmoni vokal yang matang dengan stage act yang komunikatif.
+              </p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
+              <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">03</span>
+              <h4 class="font-bold text-lg mb-1.5">Materi & Portofolio Aktif</h4>
+              <p class="text-blue-100 text-sm leading-relaxed">
+                Memiliki saluran media sosial aktif dengan portofolio video perform cover yang diperbarui secara berkala.
+              </p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5">
+              <span class="font-display font-black text-2xl text-sq-goldLight block mb-2">04</span>
+              <h4 class="font-bold text-lg mb-1.5">Solusi Entertainment Terpadu</h4>
+              <p class="text-blue-100 text-sm leading-relaxed">
+                Siap bekerja sama dengan Event Organizer (EO) maupun Wedding Organizer (WO) untuk menyukseskan acara.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. PERSONIL & TIM ================= -->
+    <section id="personil" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50/60 to-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            05 • Personil & Tim
+          </span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">PERSONIL UTAMA SQ</h2>
+          <p class="text-slate-600 text-base">
+            4 Personil Utama (Tim Vokal & Instrumen Utama) didukung oleh Tim Media & Kreatif.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-10">
+          <!-- Personil 1: ANDREI -->
+          <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
+            <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
+              <img src="Asset/FeedAndrei.png" alt="Andrei - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
+              <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
+                <span class="font-display font-black text-4xl">A</span>
+                <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
+              </div>
+            </div>
+            <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
+              <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">ANDREI</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
+          </div>
+
+          <!-- Personil 2: FALAH -->
+          <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
+            <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
+              <img src="Asset/FeedFalah.png" alt="Falah - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
+              <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
+                <span class="font-display font-black text-4xl">F</span>
+                <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
+              </div>
+            </div>
+            <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
+              <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">FALAH</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
+          </div>
+
+          <!-- Personil 3: DEDE -->
+          <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
+            <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
+              <img src="Asset/FeedDede.png" alt="Dede - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
+              <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
+                <span class="font-display font-black text-4xl">D</span>
+                <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
+              </div>
+            </div>
+            <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
+              <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">DEDE</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
+          </div>
+
+          <!-- Personil 4: YUSUF -->
+          <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-blue-100 shadow-sq text-center hover:-translate-y-1 transition">
+            <div class="aspect-[3/4] w-full rounded-2xl bg-gradient-to-b from-blue-100 to-blue-50 mb-4 overflow-hidden flex items-center justify-center relative">
+              <img src="Asset/FeedYusuf.png" alt="Yusuf - Personil SQ Entertainment" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full object-cover object-center">
+              <div class="hidden w-full h-full flex-col items-center justify-center text-sq-blue p-4">
+                <span class="font-display font-black text-4xl">Y</span>
+                <span class="text-xs font-bold mt-1">SQ Vocal & Music</span>
+              </div>
+            </div>
+            <div class="sq-pill-title inline-block px-5 py-1.5 rounded-full">
+              <span class="font-display font-black text-sq-blue tracking-widest text-sm sm:text-base">YUSUF</span>
+            </div>
+            <p class="text-xs font-semibold text-slate-500 mt-2">Vokal & Instrumen Utama</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-blue-200">
+          <div class="flex items-center gap-4 text-center sm:text-left">
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-sq-blue flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-display font-extrabold text-slate-900">Tim Media & Kreatif SQ Entertainment</h4>
+              <p class="text-sm text-slate-600">Tim Khusus Pengelola Konten Audio-Visual, Dokumentasi Acara, & Promosi Media Sosial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. PAKET PENAWARAN & PRICE LIST ================= -->
+    <section id="paket" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs sm:text-sm px-5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            06 • Proposal & Price List
+          </span>
+          <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-3">
+            SPESIAL PROMO LAUNCHING & RAMADHAN
           </h2>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Isi formulir di samping untuk langsung terhubung dengan Contact Person resmi SQ Entertainment melalui WhatsApp, atau kunjungi portofolio kami di media sosial:
+          <p class="text-slate-600 text-base">
+            Sebagai bentuk apresiasi di awal perjalanan SQ Entertainment serta menyambut periode bulan suci Ramadhan, kami menghadirkan penawaran khusus dengan kualitas penampilan dan aransemen musik profesional.
           </p>
+        </div>
 
-          <div class="space-y-3 text-sm font-semibold">
-            <a href="https://instagram.com/sq_entertainment26" target="_blank" rel="noopener" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
-              <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">IG</span>
-              <div>
-                <span class="text-xs text-slate-400 block">Instagram</span>
-                <span class="text-slate-800">@sq_entertainment26</span>
+        <!-- HIGHLIGHT CARD -->
+        <div class="rounded-3xl bg-gradient-to-br from-sq-blue via-sq-blue to-sq-dark text-white p-8 sm:p-12 shadow-sq-lg border-4 border-blue-200 mb-14 relative overflow-hidden">
+          <div class="grid lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-5 text-center lg:text-left lg:border-r lg:border-white/20 lg:pr-8">
+              <span class="sq-gold-badge text-slate-950 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider inline-block mb-4">
+                Best Value • Special Launching Rate
+              </span>
+              <h3 class="font-display font-black text-2xl sm:text-3xl mb-2">PAKET ALL-IN PERFORMANCE</h3>
+              <div class="my-5">
+                <span class="font-display font-black text-4xl sm:text-5xl text-sq-goldLight">Rp 7.500.000,-</span>
+                <span class="block text-blue-100 font-semibold text-sm mt-1">/ Event (Pertunjukan)</span>
               </div>
-            </a>
+              <p class="text-blue-100 text-sm leading-relaxed mb-6">
+                Sudah termasuk penampilan lengkap 4 personil utama hingga 60 menit beserta bonus video recap dan publikasi media sosial.
+              </p>
+              <button onclick="selectPackage('Paket All-In Performance (Rp 7.500.000,-)')" class="w-full bg-white text-sq-blue hover:bg-blue-50 font-extrabold py-4 px-6 rounded-2xl shadow-lg transition transform hover:-translate-y-0.5">
+                Pilih Paket Ini →
+              </button>
+            </div>
 
-            <a href="https://tiktok.com/@sqentertainment" target="_blank" rel="noopener" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
-              <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">TT</span>
+            <div class="lg:col-span-7 space-y-6">
               <div>
-                <span class="text-xs text-slate-400 block">TikTok</span>
-                <span class="text-slate-800">@sqentertainment</span>
+                <h4 class="font-display font-bold text-lg text-sq-goldLight mb-3">Spesifikasi & Fasilitas yang Didapat Klien:</h4>
+                <ul class="space-y-2.5 text-sm sm:text-base text-white">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sq-goldLight font-bold">✓</span>
+                    <span><strong>Durasi Penampilan:</strong> Up to 60 Menit (Total 8–10 Lagu) atau disesuaikan dengan susunan acara klien.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sq-goldLight font-bold">✓</span>
+                    <span><strong>Personil Utama:</strong> 4 Personil SQ Entertainment (Vokal & Instrumen Utama).</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sq-goldLight font-bold">✓</span>
+                    <span><strong>Pilihan Setlist (Fleksibel):</strong> Wedding Islami (Pop Akustik, Ballad, RnB), Corporate Gathering (Upbeat Pop, Pop Melayu), Konser Kemanusiaan/Palestine (Haroki, Spirit, Orchestral), atau Event Ramadhan (Hits & Medley Shalawat).</span>
+                  </li>
+                </ul>
               </div>
-            </a>
 
-            <a href="https://www.youtube.com/@shoqientertainment" target="_blank" rel="noopener" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
-              <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">YT</span>
-              <div>
-                <span class="text-xs text-slate-400 block">YouTube</span>
-                <span class="text-slate-800">shoutulqolbi entertainment</span>
+              <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 border border-white/25">
+                <h4 class="font-display font-bold text-base text-sq-goldLight mb-2.5">🎁 Bonus Fasilitas Media & Promosi:</h4>
+                <ul class="space-y-2 text-sm text-blue-50">
+                  <li><strong>• Digital Poster Cross-Promotion:</strong> Publikasi acara klien di seluruh akun media sosial SQ Entertainment (Instagram, TikTok, YouTube).</li>
+                  <li><strong>• Short Event Recap Video:</strong> Tim media SQ mendokumentasikan penampilan dan membuatkan 1 video recap/highlight acara (30–60 detik) untuk dokumentasi klien.</li>
+                </ul>
               </div>
-            </a>
-
-            <a href="mailto:sqentertainment26@gmail.com" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
-              <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">@</span>
-              <div>
-                <span class="text-xs text-slate-400 block">Email Resmi</span>
-                <span class="text-slate-800">sqentertainment26@gmail.com</span>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
 
-        <div class="lg:col-span-7">
-          <form id="bookingForm" class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-blue-100 shadow-sq space-y-4">
-            <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Form Reservasi / Penawaran Acara</h3>
+        <!-- PAKET PENAWARAN KHUSUS RAMADHAN -->
+        <div class="mb-14">
+          <h3 class="font-display font-black text-2xl text-slate-900 text-center mb-8">
+            PAKET PENAWARAN KHUSUS RAMADHAN
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="rounded-3xl p-7 bg-blue-50/60 border-2 border-blue-200 flex flex-col justify-between">
+              <div>
+                <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">
+                  30–45 Menit • 4–6 Lagu
+                </span>
+                <h4 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Intimate / Gathering</h4>
+                <ul class="space-y-2 text-sm text-slate-700 mb-6">
+                  <li><strong>• Durasi:</strong> 30–45 Menit (4–6 Lagu)</li>
+                  <li><strong>• Format:</strong> Acoustic / Pop Religi Set</li>
+                  <li><strong>• Cocok untuk:</strong> Buka Puasa Bersama Perusahaan, Halal Bihalal, Event Komunitas.</li>
+                </ul>
+              </div>
+              <button onclick="selectPackage('Paket Intimate / Gathering Ramadhan (30-45 Menit)')" class="w-full py-3 rounded-xl bg-white border-2 border-sq-blue text-sq-blue font-bold hover:bg-sq-blue hover:text-white transition">
+                Tanyakan Paket Intimate
+              </button>
+            </div>
 
+            <div class="rounded-3xl p-7 bg-blue-50/60 border-2 border-blue-200 flex flex-col justify-between">
+              <div>
+                <span class="inline-block bg-sq-blue text-white text-xs font-bold px-3.5 py-1 rounded-full mb-3">
+                  60–90 Menit • 8–12 Lagu
+                </span>
+                <h4 class="font-display font-extrabold text-xl text-slate-900 mb-3">Paket Concert / Main Event</h4>
+                <ul class="space-y-2 text-sm text-slate-700 mb-6">
+                  <li><strong>• Durasi:</strong> 60–90 Menit (8–12 Lagu)</li>
+                  <li><strong>• Format:</strong> Full Band (Haroki, Orchestra, Pop, Reggae)</li>
+                  <li><strong>• Cocok untuk:</strong> Konser Ramadhan, Event Mal, Konser Peduli Palestina / Kemanusiaan.</li>
+                </ul>
+              </div>
+              <button onclick="selectPackage('Paket Concert / Main Event Ramadhan (60-90 Menit)')" class="w-full py-3 rounded-xl bg-white border-2 border-sq-blue text-sq-blue font-bold hover:bg-sq-blue hover:text-white transition">
+                Tanyakan Paket Concert
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SYARAT & KETENTUAN -->
+        <div class="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-8">
+          <h3 class="font-display font-extrabold text-lg text-slate-900 mb-4">Syarat & Ketentuan (Terms & Conditions)</h3>
+          <div class="grid md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Nama Anda / Instansi / EO</label>
-              <input type="text" id="clientName" required placeholder="Contoh: Ahmad / Panitia Ramadhan Masjid Al-Ikhlas" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+              <p class="font-bold text-slate-900 mb-1">1. Skope Harga</p>
+              <p>Biaya Rp 7.500.000 merupakan fee penampilan per pertunjukan (per event). Berlaku untuk wilayah operasional utama (Kota/Kabupaten asal); acara di luar kota terdapat penyesuaian biaya akomodasi/transportasi.</p>
             </div>
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Kategori Acara</label>
-                <select id="eventCategory" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
-                  <option value="Wedding & Private Event">Wedding & Private Event</option>
-                  <option value="Corporate & Gathering">Corporate & Gathering</option>
-                  <option value="Konser Kemanusiaan & Palestine">Konser Kemanusiaan & Palestine</option>
-                  <option value="Event Ramadhan & Hari Besar">Event Ramadhan & Hari Besar</option>
-                </select>
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Pilihan Paket</label>
-                <select id="packageSelect" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
-                  <option value="Paket All-In Performance (Rp 7.500.000,-)">Paket All-In Performance (Rp 7.500.000,-)</option>
-                  <option value="Paket Intimate / Gathering Ramadhan (30-45 Menit)">Paket Intimate / Gathering (30-45 Menit)</option>
-                  <option value="Paket Concert / Main Event Ramadhan (60-90 Menit)">Paket Concert / Main Event (60-90 Menit)</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Tanggal Acara</label>
-                <input type="date" id="eventDate" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Lokasi / Kota Acara</label>
-                <input type="text" id="eventLocation" required placeholder="Contoh: Depok / Jakarta Selatan" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
-              </div>
-            </div>
-
             <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Catatan Tambahan / Request Lagu</label>
-              <textarea id="eventNotes" rows="3" placeholder="Contoh: Request nuansa Pop Akustik & Medley Shalawat..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm"></textarea>
+              <p class="font-bold text-slate-900 mb-1">2. Kebutuhan Teknis (Sound System)</p>
+              <p>Pihak klien/penyelenggara menyediakan sistem tata suara (Sound System) dan perlengkapan panggung standar sesuai kebutuhan riders musik SQ Entertainment. <em>(Tersedia juga opsi sewa Sound System dari tim kami di halaman <a href="optional.html#sound-system" class="text-sq-blue font-bold underline">Pilihan Paket</a>)</em>.</p>
             </div>
-
-            <button type="submit" class="w-full bg-sq-blue hover:bg-sq-dark text-white font-extrabold py-4 rounded-xl shadow-sq transition flex items-center justify-center gap-2">
-              <span>Kirim Booking via WhatsApp</span>
-              <span>→</span>
-            </button>
-          </form>
+            <div>
+              <p class="font-bold text-slate-900 mb-1">3. Sistem Pembayaran</p>
+              <p><strong>DP (Down Payment):</strong> 50% saat konfirmasi pemesanan / penandatanganan kesepakatan.<br><strong>Pelunasan:</strong> Maksimal H-1 sebelum hari H penampilan.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div>
-        <p class="font-display font-extrabold text-white text-base">SQ ENTERTAINMENT (Shoutul Qolbi)</p>
-        <p class="text-xs mt-1">Modern Islamic & Universal Music Entertainment</p>
+    <!-- ================= 7. BOOKING & KONTAK MEDIA SOSIAL ================= -->
+    <section id="booking" class="py-16 sm:py-24 bg-gradient-to-b from-blue-50 to-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-5 space-y-6">
+            <span class="inline-block sq-pill-title text-sq-blue font-display font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
+              07 • Kontak & Booking
+            </span>
+            <h2 class="font-display font-black text-3xl text-slate-900 leading-tight">
+              Hadirkan SQ Entertainment di Acara Anda
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Isi formulir di samping untuk langsung terhubung dengan Contact Person resmi SQ Entertainment melalui WhatsApp, atau kunjungi portofolio kami di media sosial:
+            </p>
+
+            <div class="space-y-3 text-sm font-semibold">
+              <a href="https://instagram.com/sq_entertainment26" target="_blank" rel="noopener" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
+                <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">IG</span>
+                <div>
+                  <span class="text-xs text-slate-400 block">Instagram</span>
+                  <span class="text-slate-800">@sq_entertainment26</span>
+                </div>
+              </a>
+
+              <a href="https://tiktok.com/@sqentertainment" target="_blank" rel="noopener" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
+                <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">TT</span>
+                <div>
+                  <span class="text-xs text-slate-400 block">TikTok</span>
+                  <span class="text-slate-800">@sqentertainment</span>
+                </div>
+              </a>
+
+              <a href="https://www.youtube.com/@shoqientertainment" target="_blank" rel="noopener" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
+                <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">YT</span>
+                <div>
+                  <span class="text-xs text-slate-400 block">YouTube</span>
+                  <span class="text-slate-800">shoutulqolbi entertainment</span>
+                </div>
+              </a>
+
+              <a href="mailto:sqentertainment26@gmail.com" class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-blue-100 hover:border-sq-blue shadow-sm transition">
+                <span class="w-9 h-9 rounded-xl bg-blue-50 text-sq-blue flex items-center justify-center font-bold">@</span>
+                <div>
+                  <span class="text-xs text-slate-400 block">Email Resmi</span>
+                  <span class="text-slate-800">sqentertainment26@gmail.com</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <form id="bookingForm" class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-blue-100 shadow-sq space-y-4">
+              <h3 class="font-display font-extrabold text-xl text-slate-900 mb-2">Form Reservasi / Penawaran Acara</h3>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Nama Anda / Instansi / EO</label>
+                <input type="text" id="clientName" required placeholder="Contoh: Ahmad / Panitia Ramadhan Masjid Al-Ikhlas" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Kategori Acara</label>
+                  <select id="eventCategory" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
+                    <option value="Wedding & Private Event">Wedding & Private Event</option>
+                    <option value="Corporate & Gathering">Corporate & Gathering</option>
+                    <option value="Konser Kemanusiaan & Palestine">Konser Kemanusiaan & Palestine</option>
+                    <option value="Event Ramadhan & Hari Besar">Event Ramadhan & Hari Besar</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Pilihan Paket</label>
+                  <select id="packageSelect" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white">
+                    <option value="Paket All-In Performance (Rp 7.500.000,-)">Paket All-In Performance (Rp 7.500.000,-)</option>
+                    <option value="Paket Intimate / Gathering Ramadhan (30-45 Menit)">Paket Intimate / Gathering (30-45 Menit)</option>
+                    <option value="Paket Concert / Main Event Ramadhan (60-90 Menit)">Paket Concert / Main Event (60-90 Menit)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Tanggal Acara</label>
+                  <input type="date" id="eventDate" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Lokasi / Kota Acara</label>
+                  <input type="text" id="eventLocation" required placeholder="Contoh: Depok / Jakarta Selatan" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Catatan Tambahan / Request Lagu</label>
+                <textarea id="eventNotes" rows="3" placeholder="Contoh: Request nuansa Pop Akustik & Medley Shalawat..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sq-blue focus:ring-2 focus:ring-blue-100 outline-none text-sm"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-sq-blue hover:bg-sq-dark text-white font-extrabold py-4 rounded-xl shadow-sq transition flex items-center justify-center gap-2">
+                <span>Kirim Booking via WhatsApp</span>
+                <span>→</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-5 text-xs font-semibold">
-        <a href="#beranda" class="text-white">Beranda Utama</a>
-        <a href="optional.html" class="hover:text-white transition">Pilihan Paket</a>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div>
+          <p class="font-display font-extrabold text-white text-base">SQ ENTERTAINMENT (Shoutul Qolbi)</p>
+          <p class="text-xs mt-1">Modern Islamic & Universal Music Entertainment</p>
+        </div>
+        <div class="flex items-center gap-5 text-xs font-semibold">
+          <a href="#beranda" class="text-white">Beranda Utama</a>
+          <a href="optional.html" class="hover:text-white transition">Pilihan Paket</a>
+        </div>
+        <p class="text-xs">© 2026 SQ Entertainment. All rights reserved.</p>
       </div>
-      <p class="text-xs">© 2026 SQ Entertainment. All rights reserved.</p>
-    </div>
-  </footer>
+    </footer>
+
+  </div>
 
   <!-- ================= JAVASCRIPT INTERAKTIF ================= -->
   <script>
     const WHATSAPP_CP = "6282311682185";
 
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    // Scroll-Spy untuk memindahkan lingkaran aktif pada Floating Pill Navbar
+    const navItems = document.querySelectorAll('.nav-pill-item[data-section]');
+    const sections = Array.from(navItems).map(item => document.getElementById(item.dataset.section)).filter(Boolean);
+
+    function updateActivePill() {
+      const scrollPos = window.scrollY + window.innerHeight * 0.35;
+      let currentId = sections[0]?.id;
+
+      for (const section of sections) {
+        if (section.offsetTop <= scrollPos) {
+          currentId = section.id;
+        }
+      }
+
+      navItems.forEach(item => {
+        if (item.dataset.section === currentId) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActivePill, { passive: true });
+    updateActivePill();
 
     function selectPackage(pkgName) {
       const select = document.getElementById('packageSelect');
