@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth scroll-pt-24">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -73,19 +73,46 @@
       border: 1.5px solid rgba(0, 86, 255, 0.14);
     }
 
-    /* Active state untuk desktop floating pill icon */
-    .nav-pill-item.active {
-      background-color: #0F172A;
-      color: #A3E635;
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+    /* ================= COOL FROSTED GLASS NAVBAR ================= */
+    .sq-glass-pill {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.74) 0%,
+        rgba(255, 255, 255, 0.48) 100%
+      );
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow:
+        0 10px 30px -5px rgba(0, 86, 255, 0.12),
+        0 4px 12px -2px rgba(15, 23, 42, 0.06),
+        inset 0 1px 1px rgba(255, 255, 255, 0.95);
     }
 
-    /* Active state untuk mobile bottom navigation bar */
+    .sq-glass-pill:hover {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.84) 0%,
+        rgba(255, 255, 255, 0.60) 100%
+      );
+      border-color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Active pill state di dalam glass navbar (seperti Gambar 2) */
+    .glass-nav-item.active {
+      background: rgba(255, 255, 255, 0.94);
+      color: #0056FF;
+      font-weight: 700;
+      box-shadow:
+        0 4px 14px rgba(0, 86, 255, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+    }
+
+    /* Active state untuk mobile glass bottom navigation bar */
     .mobile-nav-item.active {
       color: #0056FF;
-    }
-    .mobile-nav-item.active .mobile-active-bar {
-      opacity: 1;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(0, 86, 255, 0.12);
     }
     .mobile-nav-item.active svg {
       stroke-width: 2.3;
@@ -94,141 +121,116 @@
 </head>
 <body class="antialiased selection:bg-sq-blue selection:text-white">
 
-  <!-- ================= DESKTOP FLOATING VERTICAL PILL NAVBAR ================= -->
-  <aside aria-label="Navigasi Pilihan Paket Desktop" class="hidden md:block fixed left-5 top-1/2 -translate-y-1/2 z-50">
-    <nav class="flex flex-col items-center gap-2.5 bg-white/95 backdrop-blur-md p-2 rounded-full shadow-[0_14px_38px_rgba(15,23,42,0.14)] border border-blue-100/90">
+  <!-- ================= TOP FLOATING SPLIT-PILL GLASS NAVBAR ================= -->
+  <header aria-label="Navigasi Pilihan Paket" class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 pointer-events-none">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4 sm:gap-6">
       
-      <!-- Kembali ke Beranda Utama -->
-      <a href="index.html" class="group relative w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105">
-        <img src="Asset/PhotoProfileSQ.png" alt="Beranda Utama SQ" class="w-9 h-9 rounded-full object-cover border border-sq-gold" />
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
-          ← Beranda Utama
-        </span>
+      <!-- Kapsul Kiri: Logo + Nama Brand & Subtitle Status -->
+      <a href="index.html" class="sq-glass-pill pointer-events-auto inline-flex items-center gap-2.5 sm:gap-3 pl-1.5 pr-3.5 sm:pl-2 sm:pr-4 py-1.5 rounded-full transition-all duration-300 hover:scale-[1.01] group shrink-0">
+        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-950 overflow-hidden border-2 border-sq-gold shadow-sm shrink-0 flex items-center justify-center">
+          <img src="Asset/PhotoProfileSQ.png" alt="Logo SQ Entertainment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div class="text-left">
+          <p class="font-display font-extrabold text-xs sm:text-[15px] text-slate-900 leading-tight tracking-tight whitespace-nowrap">
+            SQ Entertainment
+          </p>
+          <div class="flex items-center gap-1.5 mt-0.5">
+            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-[10px] sm:text-[11px] font-semibold text-slate-600 leading-none whitespace-nowrap">Shoutul Qolbi</span>
+          </div>
+        </div>
       </a>
 
-      <!-- Talent Agency -->
-      <a href="#talent" data-section="talent" class="nav-pill-item active group relative w-11 h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-        </svg>
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+      <!-- Kapsul Kanan (Desktop): Menu Navigasi Glass Pill -->
+      <nav aria-label="Menu Pilihan Paket Desktop" class="hidden lg:flex sq-glass-pill pointer-events-auto items-center gap-1 p-1.5 rounded-full">
+        <a href="index.html" class="px-3.5 py-2 rounded-full text-xs xl:text-sm font-bold text-sq-blue hover:bg-white/60 transition-all duration-200 whitespace-nowrap">
+          ← Beranda
+        </a>
+        <a href="#talent" data-section="talent" class="glass-nav-item active px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold text-slate-600 hover:text-sq-blue hover:bg-white/50 transition-all duration-200 whitespace-nowrap">
           Talent Agency
-        </span>
-      </a>
-
-      <!-- Event Lainnya -->
-      <a href="#event-lain" data-section="event-lain" class="nav-pill-item group relative w-11 h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-        </svg>
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+        </a>
+        <a href="#event-lain" data-section="event-lain" class="glass-nav-item px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold text-slate-600 hover:text-sq-blue hover:bg-white/50 transition-all duration-200 whitespace-nowrap">
           Event Lainnya
-        </span>
-      </a>
-
-      <!-- Spesial Event: Berkisah Falah -->
-      <a href="#spesial-event" data-section="spesial-event" class="nav-pill-item group relative w-11 h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-        </svg>
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
-          Spesial Event: Berkisah Falah
-        </span>
-      </a>
-
-      <!-- Peminjaman Sound System -->
-      <a href="#sound-system" data-section="sound-system" class="nav-pill-item group relative w-11 h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
-        </svg>
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+        </a>
+        <a href="#spesial-event" data-section="spesial-event" class="glass-nav-item px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold text-slate-600 hover:text-sq-blue hover:bg-white/50 transition-all duration-200 whitespace-nowrap">
+          Berkisah Falah
+        </a>
+        <a href="#sound-system" data-section="sound-system" class="glass-nav-item px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold text-slate-600 hover:text-sq-blue hover:bg-white/50 transition-all duration-200 whitespace-nowrap">
           Sound System
-        </span>
-      </a>
-
-      <!-- Daftar Harga -->
-      <a href="#harga-optional" data-section="harga-optional" class="nav-pill-item group relative w-11 h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-sq-blue hover:bg-blue-50 transition-all duration-200">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-        </svg>
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
+        </a>
+        <a href="#harga-optional" data-section="harga-optional" class="glass-nav-item px-3.5 py-2 rounded-full text-xs xl:text-sm font-semibold text-slate-600 hover:text-sq-blue hover:bg-white/50 transition-all duration-200 whitespace-nowrap">
           Daftar Harga
-        </span>
-      </a>
+        </a>
+        <a href="#booking-optional" data-section="booking-optional" class="glass-nav-item px-4 py-2 rounded-full text-xs xl:text-sm font-bold text-slate-700 hover:text-sq-blue hover:bg-white/60 transition-all duration-200 whitespace-nowrap">
+          Booking
+        </a>
+      </nav>
 
-      <!-- Garis Pemisah Halus -->
-      <div class="w-6 h-[1px] bg-slate-200 my-0.5"></div>
+      <!-- Kapsul Kanan (Mobile & Tablet): Lega dengan Gap Luas -->
+      <div class="flex lg:hidden sq-glass-pill pointer-events-auto items-center gap-1.5 p-1 sm:p-1.5 rounded-full shrink-0">
+        <a href="index.html" class="hidden sm:inline-flex px-3 py-1.5 rounded-full text-xs font-bold text-sq-blue hover:bg-white/70 transition whitespace-nowrap">
+          ← Beranda
+        </a>
+        <a href="#booking-optional" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-extrabold bg-sq-blue text-white shadow-sm hover:bg-sq-dark transition whitespace-nowrap">
+          Booking
+        </a>
+      </div>
 
-      <!-- Booking Layanan -->
-      <a href="#booking-optional" data-section="booking-optional" class="nav-pill-item group relative w-11 h-11 rounded-full flex items-center justify-center text-slate-500 hover:text-white hover:bg-sq-blue transition-all duration-200">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-        </svg>
-        <span class="pointer-events-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 absolute left-full ml-3.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold whitespace-nowrap shadow-lg">
-          Booking Layanan
-        </span>
-      </a>
-
-    </nav>
-  </aside>
-
-  <!-- ================= MOBILE BOTTOM NAVIGATION BAR ================= -->
-  <nav aria-label="Navigasi Mobile Pilihan Paket" class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200/90 shadow-[0_-6px_24px_rgba(15,23,42,0.06)]">
-    <div class="grid grid-cols-5 max-w-md mx-auto px-1">
+    </div>
+  </header>
+  
+  <!-- ================= MOBILE FLOATING GLASS BOTTOM NAVIGATION BAR ================= -->
+  <nav aria-label="Navigasi Mobile Pilihan Paket" class="lg:hidden fixed bottom-3 inset-x-3 z-50 sq-glass-pill rounded-full p-1.5 max-w-md mx-auto">
+    <div class="grid grid-cols-5 gap-1">
       
       <!-- Beranda -->
-      <a href="index.html" class="mobile-nav-item flex flex-col items-center justify-center pb-2.5 text-slate-500 hover:text-sq-blue transition">
-        <span class="mobile-active-bar w-8 h-[3px] rounded-full bg-sq-blue mb-1.5 opacity-0 transition-opacity"></span>
-        <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <a href="index.html" class="mobile-nav-item flex flex-col items-center justify-center py-2 rounded-full text-slate-600 hover:text-sq-blue transition-all duration-200">
+        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
         </svg>
-        <span class="text-[11px] font-semibold leading-none">Beranda</span>
+        <span class="text-[10px] font-bold leading-none">Beranda</span>
       </a>
 
       <!-- Talent -->
-      <a href="#talent" data-mobile-section="talent" class="mobile-nav-item active flex flex-col items-center justify-center pb-2.5 text-slate-500 hover:text-sq-blue transition">
-        <span class="mobile-active-bar w-8 h-[3px] rounded-full bg-sq-blue mb-1.5 opacity-0 transition-opacity"></span>
-        <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <a href="#talent" data-mobile-section="talent" class="mobile-nav-item active flex flex-col items-center justify-center py-2 rounded-full text-slate-600 hover:text-sq-blue transition-all duration-200">
+        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
         </svg>
-        <span class="text-[11px] font-semibold leading-none">Talent</span>
+        <span class="text-[10px] font-bold leading-none">Talent</span>
       </a>
 
       <!-- Spesial Event -->
-      <a href="#spesial-event" data-mobile-section="spesial-event" class="mobile-nav-item flex flex-col items-center justify-center pb-2.5 text-slate-500 hover:text-sq-blue transition">
-        <span class="mobile-active-bar w-8 h-[3px] rounded-full bg-sq-blue mb-1.5 opacity-0 transition-opacity"></span>
-        <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <a href="#spesial-event" data-mobile-section="spesial-event" class="mobile-nav-item flex flex-col items-center justify-center py-2 rounded-full text-slate-600 hover:text-sq-blue transition-all duration-200">
+        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
         </svg>
-        <span class="text-[11px] font-semibold leading-none">Spesial</span>
+        <span class="text-[10px] font-bold leading-none">Spesial</span>
       </a>
 
       <!-- Sound System -->
-      <a href="#sound-system" data-mobile-section="sound-system" class="mobile-nav-item flex flex-col items-center justify-center pb-2.5 text-slate-500 hover:text-sq-blue transition">
-        <span class="mobile-active-bar w-8 h-[3px] rounded-full bg-sq-blue mb-1.5 opacity-0 transition-opacity"></span>
-        <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <a href="#sound-system" data-mobile-section="sound-system" class="mobile-nav-item flex flex-col items-center justify-center py-2 rounded-full text-slate-600 hover:text-sq-blue transition-all duration-200">
+        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
         </svg>
-        <span class="text-[11px] font-semibold leading-none">Sound</span>
+        <span class="text-[10px] font-bold leading-none">Sound</span>
       </a>
 
       <!-- Booking -->
-      <a href="#booking-optional" data-mobile-section="booking-optional" class="mobile-nav-item flex flex-col items-center justify-center pb-2.5 text-slate-500 hover:text-sq-blue transition">
-        <span class="mobile-active-bar w-8 h-[3px] rounded-full bg-sq-blue mb-1.5 opacity-0 transition-opacity"></span>
-        <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+      <a href="#booking-optional" data-mobile-section="booking-optional" class="mobile-nav-item flex flex-col items-center justify-center py-2 rounded-full text-slate-600 hover:text-sq-blue transition-all duration-200">
+        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" stroke-width="1.9" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
         </svg>
-        <span class="text-[11px] font-semibold leading-none">Booking</span>
+        <span class="text-[10px] font-bold leading-none">Booking</span>
       </a>
 
     </div>
   </nav>
 
   <!-- ================= MAIN CONTENT WRAPPER ================= -->
-  <div class="md:pl-20 xl:pl-0 pb-16 md:pb-0">
+  <div class="pb-20 lg:pb-0">
 
     <!-- ================= HERO PILIHAN PAKET ================= -->
-    <section class="sq-hero-bg pt-12 pb-16 sm:pt-24 sm:pb-20 text-center">
+    <section class="sq-hero-bg pt-28 pb-16 sm:pt-32 sm:pb-20 text-center">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <div class="inline-flex items-center gap-2 sq-pill-title px-4 py-1.5 rounded-full mb-5">
           <span class="w-2.5 h-2.5 rounded-full bg-sq-blue animate-pulse"></span>
@@ -671,8 +673,8 @@
   <script>
     const WHATSAPP_CP = "6282311682185";
 
-    // Scroll-Spy untuk Desktop Floating Pill & Mobile Bottom Nav
-    const navItems = document.querySelectorAll('.nav-pill-item[data-section]');
+    // Scroll-Spy untuk Top Glass Navbar & Mobile Floating Glass Bottom Nav
+    const navItems = document.querySelectorAll('.glass-nav-item[data-section]');
     const mobileNavItems = document.querySelectorAll('.mobile-nav-item[data-mobile-section]');
     const sections = Array.from(navItems).map(item => document.getElementById(item.dataset.section)).filter(Boolean);
 
@@ -686,7 +688,7 @@
         }
       }
 
-      // Update Desktop Pill
+      // Update Top Desktop Glass Pill
       navItems.forEach(item => {
         item.classList.toggle('active', item.dataset.section === currentId);
       });
